@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Chinese font mappings for the open-source DITA-OT PDF2 transformation.
+
+  GitHub Actions copies this file over DITA-OT's default
+  org.dita.pdf2/cfg/fo/font-mappings.xml. This ensures that generated XSL-FO
+  uses stable CJK font-family names instead of Windows-only fonts such as SimSun
+  or commercial fonts such as AdobeSongStd-Light. Apache FOP then maps these
+  names to WenQuanYi Micro Hei through styles/fop-zh-cn.xconf.
+-->
+<font-mappings>
+  <font-table>
+    <aliases>
+      <alias name="serif">Serif</alias>
+    </aliases>
+    <aliases>
+      <alias name="sans-serif">Sans</alias>
+    </aliases>
+    <aliases>
+      <alias name="monospace">Monospaced</alias>
+    </aliases>
+    <aliases>
+      <alias name="Helvetica">Normal</alias>
+    </aliases>
+    <aliases>
+      <alias name="Arial">Sans</alias>
+    </aliases>
+    <aliases>
+      <alias name="Times">Serif</alias>
+    </aliases>
+    <aliases>
+      <alias name="Times New Roman">Serif</alias>
+    </aliases>
+    <aliases>
+      <alias name="Courier">Monospaced</alias>
+    </aliases>
+
+    <logical-font name="Normal">
+      <physical-font char-set="default">
+        <font-face>Noto Sans CJK SC, Noto Sans, DejaVu Sans</font-face>
+      </physical-font>
+      <physical-font char-set="Simplified Chinese">
+        <font-face>Noto Sans CJK SC, Noto Sans, DejaVu Sans</font-face>
+      </physical-font>
+      <physical-font char-set="Symbols">
+        <font-face>ZapfDingbats</font-face>
+      </physical-font>
+      <physical-font char-set="SubmenuSymbol">
+        <font-face>ZapfDingbats</font-face>
+      </physical-font>
+      <physical-font char-set="SymbolsSuperscript">
+        <font-face>Noto Sans CJK SC, Noto Sans, DejaVu Sans</font-face>
+        <baseline-shift>20%</baseline-shift>
+        <override-size>smaller</override-size>
+      </physical-font>
+    </logical-font>
+
+    <logical-font name="Sans">
+      <physical-font char-set="default">
+        <font-face>Noto Sans CJK SC, Noto Sans, DejaVu Sans</font-face>
+      </physical-font>
+      <physical-font char-set="Simplified Chinese">
+        <font-face>Noto Sans CJK SC, Noto Sans, DejaVu Sans</font-face>
+      </physical-font>
+      <physical-font char-set="Japanese">
+        <font-face>Noto Sans CJK JP, Noto Sans CJK SC, Noto Sans</font-face>
+      </physical-font>
+      <physical-font char-set="Korean">
+        <font-face>Noto Sans CJK KR, Noto Sans CJK SC, Noto Sans</font-face>
+      </physical-font>
+      <physical-font char-set="Symbols">
+        <font-face>ZapfDingbats</font-face>
+      </physical-font>
+      <physical-font char-set="SubmenuSymbol">
+        <font-face>ZapfDingbats</font-face>
+      </physical-font>
+      <physical-font char-set="SymbolsSuperscript">
+        <font-face>Noto Sans CJK SC, Noto Sans, DejaVu Sans</font-face>
+        <baseline-shift>20%</baseline-shift>
+        <override-size>smaller</override-size>
+      </physical-font>
+    </logical-font>
+
+    <logical-font name="Serif">
+      <physical-font char-set="default">
+        <font-face>Noto Serif CJK SC, Noto Sans CJK SC, Noto Serif, DejaVu Serif</font-face>
+      </physical-font>
+      <physical-font char-set="Simplified Chinese">
+        <font-face>Noto Serif CJK SC, Noto Sans CJK SC, Noto Serif, DejaVu Serif</font-face>
+      </physical-font>
+      <physical-font char-set="Japanese">
+        <font-face>Noto Serif CJK JP, Noto Serif CJK SC, Noto Serif</font-face>
+      </physical-font>
+      <physical-font char-set="Korean">
+        <font-face>Noto Serif CJK KR, Noto Serif CJK SC, Noto Serif</font-face>
+      </physical-font>
+      <physical-font char-set="Symbols">
+        <font-face>ZapfDingbats</font-face>
+      </physical-font>
+      <physical-font char-set="SubmenuSymbol">
+        <font-face>ZapfDingbats</font-face>
+      </physical-font>
+      <physical-font char-set="SymbolsSuperscript">
+        <font-face>Noto Serif CJK SC, Noto Sans CJK SC, Noto Serif, DejaVu Serif</font-face>
+        <baseline-shift>20%</baseline-shift>
+        <override-size>smaller</override-size>
+      </physical-font>
+    </logical-font>
+
+    <logical-font name="Monospaced">
+      <physical-font char-set="default">
+        <font-face>Noto Sans Mono CJK SC, Noto Sans CJK SC, DejaVu Sans Mono</font-face>
+      </physical-font>
+      <physical-font char-set="Simplified Chinese">
+        <font-face>Noto Sans Mono CJK SC, Noto Sans CJK SC, DejaVu Sans Mono</font-face>
+      </physical-font>
+      <physical-font char-set="Japanese">
+        <font-face>Noto Sans Mono CJK JP, Noto Sans Mono CJK SC, Noto Sans CJK SC</font-face>
+      </physical-font>
+      <physical-font char-set="Korean">
+        <font-face>Noto Sans Mono CJK KR, Noto Sans Mono CJK SC, Noto Sans CJK SC</font-face>
+      </physical-font>
+      <physical-font char-set="Symbols">
+        <font-face>ZapfDingbats</font-face>
+      </physical-font>
+      <physical-font char-set="SymbolsSuperscript">
+        <font-face>Noto Sans Mono CJK SC, Noto Sans CJK SC, DejaVu Sans Mono</font-face>
+        <baseline-shift>20%</baseline-shift>
+        <override-size>smaller</override-size>
+      </physical-font>
+    </logical-font>
+  </font-table>
+</font-mappings>
