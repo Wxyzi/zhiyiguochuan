@@ -94,6 +94,24 @@ jobs:
             -f html5 \
             -o site \
             --outer.control=quiet
+          python - <<'PY'
+          from pathlib import Path
+
+          # The source map is in maps/ and references topics as ../topics/...
+          # DITA-OT preserves those hrefs in the root index.html. On a GitHub
+          # Pages project site (/git/), ../topics/... resolves outside the
+          # repository path. Rewrite only the root index links so the table of
+          # contents opens /git/topics/... correctly.
+          index = Path("site/index.html")
+          text = index.read_text(encoding="utf-8")
+          text = text.replace('href="../topics/', 'href="topics/')
+          text = text.replace('src="../topics/', 'src="topics/')
+          index.write_text(text, encoding="utf-8")
+          PY
+          if grep -q 'href="../topics/' site/index.html; then
+            echo "::error::Root index still contains links that escape the GitHub Pages project path."
+            exit 1
+          fi
           touch site/.nojekyll
 
       - name: Upload HTML5 build artifact
