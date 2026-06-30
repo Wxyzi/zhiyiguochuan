@@ -77,6 +77,16 @@ zhiya-guochuan-agent-doc/
 6. 在发布前运行 `Validate and Check for Completeness`。
 7. 发布 PDF 或 WebHelp 后，按照 `r-quality-checklist.dita` 逐项检查输出效果。
 
+## GitHub Actions CI/CD
+
+本仓库配置了 `.github/workflows/docs.yml`，用于实现 Docs-as-Code 流程：
+
+- **CI**：当 `main` 或 `master` 分支收到 push，或创建 pull request 时，自动使用 DITA-OT 校验 `maps/zhiya-guochuan-agent.ditamap`。
+- **构建**：校验通过后，自动构建 HTML5 文档站点，并将构建结果作为 Actions artifact 保存。
+- **CD**：当变更合入 `main` 或 `master` 分支后，自动把 HTML5 文档发布到 GitHub Pages。
+
+云端 CI/CD 使用开源 DITA-OT 的 `html5` 转换类型。当前精排 PDF 使用 Oxygen XML Editor 28.1 的 `pdf-css-html5` 和 Oxygen PDF Chemistry，本地可生成；GitHub 托管 runner 默认没有 Oxygen PDF Chemistry，因此不在云端直接生成精排 PDF。
+
 ## 命令行验证与发布
 
 如果需要在 Oxygen 外部复现验证和发布流程，可以使用 Oxygen 自带的 Java 与 DITA-OT：
