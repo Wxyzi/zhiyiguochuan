@@ -64,7 +64,11 @@ jobs:
       - name: Install CJK fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra poppler-utils
+          fc-cache -f
+          test -f /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc
+          test -f /usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc
+          fc-match "Noto Sans CJK SC"
 
       - name: Install DITA-OT
         run: |
@@ -127,6 +131,7 @@ jobs:
             -f pdf \
             -o pdf \
             --args.output.base=zhiya-guochuan-agent \
+            --args.fo.userconfig=styles/fop-zh-cn.xconf \
             --outer.control=quiet
           mkdir -p site/pdf
           pdf_file="$(find pdf -type f -name '*.pdf' | head -n 1)"
@@ -135,6 +140,15 @@ jobs:
             exit 1
           fi
           cp "$pdf_file" site/pdf/zhiya-guochuan-agent.pdf
+          pdffonts site/pdf/zhiya-guochuan-agent.pdf
+          if ! pdffonts site/pdf/zhiya-guochuan-agent.pdf | grep -Eiq 'NotoSansCJK|Noto Sans CJK|NotoSans'; then
+            echo "::error::PDF does not appear to embed Noto CJK fonts."
+            exit 1
+          fi
+          if ! pdftotext site/pdf/zhiya-guochuan-agent.pdf - | grep -q '智译国传'; then
+            echo "::error::PDF text extraction did not find expected Chinese text."
+            exit 1
+          fi
           touch site/.nojekyll
 
       - name: Upload site build artifact
