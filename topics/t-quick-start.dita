@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="t-quick-start" xml:lang="zh-CN">
+  <title>快速开始使用智译国传智能体</title>
+  <shortdesc>完成基础准备后，用户可以在扣子平台向智译国传智能体提交一段中文科技新闻，获取五部分结构化翻译结果。</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>你已经获得<keyword keyref="product-name"/>在<keyword keyref="platform-name"/>平台上的访问权限。</li>
+        <li>你已经准备好需要翻译的中文科技新闻源文本。</li>
+        <li>你了解目标读者是普通国际读者，还是科技、产业或学术领域读者。</li>
+      </ul>
+    </prereq>
+    <context>
+      <p>使用快速开始流程可以验证智能体是否能够正常生成译文、标题备选、术语表、事实核对表和人工复核提示。</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>在扣子平台打开智译国传智能体的对话界面。</cmd>
+      </step>
+      <step>
+        <cmd>粘贴一段中文科技新闻作为源文本。</cmd>
+        <info>
+          <p>建议先用 300 至 800 字的短篇新闻测试，确认智能体的输出结构符合预期。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>说明目标读者和输出需求（可选）。</cmd>
+        <info>
+          <p>如果未作说明，智能体默认面向普通国际读者，并输出包含译文、标题、术语表、事实核对表和人工复核提示的完整结果。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>等待智能体完成六步处理并输出结果。</cmd>
+        <stepresult>
+          <p>智能体依次完成输入诊断、事实抽取、术语规范、译文生成、质量检查和最终整合，输出五部分结构化结果。</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>查看输出的术语表和事实核对表，确认处理依据。</cmd>
+        <info>
+          <p>术语表列出术语的推荐译法和处理说明，事实核对表列出处需要核查的人名、机构名、数字、时间和政策名称。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>保存本次处理结果，作为后续编辑或归档的基础。</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>你可以获得一版包含译文、标题备选、术语表、事实核对表和人工复核提示的英译结果，并能够追溯关键术语和事实的处理依据。</p>
+    </result>
+    <postreq>
+      <p>如果需要更精细地控制翻译行为，请参考<xref href="t-configure-profile.dita">配置翻译任务参数</xref>。如果需要了解完整工作流的每一步，请参考<xref href="t-run-translation-workflow.dita">运行翻译工作流</xref>。</p>
+    </postreq>
+  </taskbody>
+</task>

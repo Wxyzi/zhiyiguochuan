@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="c-audience-and-scenarios" xml:lang="zh-CN">
+  <title>目标用户和使用场景</title>
+  <shortdesc>智译国传智能体服务于需要把中文科技新闻转化为英文国际传播内容的研究机构、媒体和出海科技企业。</shortdesc>
+  <conbody>
+    <section>
+      <title>目标用户</title>
+      <dl>
+        <dlentry>
+          <dt>科研院所和高校用户</dt>
+          <dd>负责将科研成果、项目介绍或会议材料中的科技新闻转化为英文，面向国际学术界和公众传播。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>媒体国际部和国际传播编辑</dt>
+          <dd>负责将中文科技新闻、机器人产业报道和政策科技动态编译为符合英文新闻习惯的稿件，面向海外读者发布。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>翻译和译后编辑人员</dt>
+          <dd>负责检查译文准确性、术语一致性、事实准确性和标题克制度，使用智能体输出的术语表和事实核对表辅助审校。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>出海科技企业和品牌团队</dt>
+          <dd>负责把机器人、人工智能、新能源等领域的中文科技报道转化为海外市场可接受的英文内容。</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>典型场景</title>
+      <ul>
+        <li>将中文科技新闻稿编译为符合英文新闻习惯的国际传播稿件。</li>
+        <li>统一多篇报道中机构名、项目名、政策名和技术术语的英译。</li>
+        <li>为译文生成术语表和事实核对表，辅助译后编辑核查处理依据。</li>
+        <li>检查标题是否存在夸大、绝对化或过度营销表达。</li>
+        <li>保留"约、有望、预计、或将"等限定语和研发阶段信息，避免把潜力误写成既成事实。</li>
+      </ul>
+    </section>
+  </conbody>
+</concept>

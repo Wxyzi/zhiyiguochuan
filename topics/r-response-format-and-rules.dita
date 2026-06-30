@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="r-response-format-and-rules" xml:lang="zh-CN">
+  <title>回复格式与质量规则</title>
+  <shortdesc>本主题说明智译国传智能体在新闻英译任务中的默认输出结构和质量检查要求。</shortdesc>
+  <refbody>
+    <section>
+      <title>默认输出结构</title>
+      <fig>
+        <title>五部分输出结构</title>
+        <image href="images/output-five-parts.svg" placement="break">
+          <alt>智能体输出 Final Translation、Headline Options、Term Table、Fact Checklist 和 Human Review Notes 五部分结果。</alt>
+        </image>
+      </fig>
+      <p>智能体默认输出五部分结构化结果：</p>
+      <ul>
+        <li><b>Final Translation：</b>提供完整英文译文。</li>
+        <li><b>Headline Options：</b>提供三个英文标题备选。</li>
+        <li><b>Term Table：</b>列出中文术语、推荐译法和处理说明。</li>
+        <li><b>Fact Checklist：</b>核对人名、机构、时间、数字、政策名称和因果关系。</li>
+        <li><b>Human Review Notes：</b>提示需要人工复核的内容。</li>
+      </ul>
+    </section>
+    <section>
+      <title>输出模板</title>
+      <codeblock>Final Translation
+[英文译文]
+
+Headline Options
+1. [标题备选一]
+2. [标题备选二]
+3. [标题备选三]
+
+Term Table
+| 中文术语 | 推荐译法 | 处理说明 |
+|---|---|---|
+
+Fact Checklist
+| 类型 | 原文信息 | 译文处理 | 状态 |
+|---|---|---|---|
+
+Human Review Notes
+- [需要人工复核的内容]</codeblock>
+    </section>
+    <section>
+      <title>标题生成规则</title>
+      <ul>
+        <li>标题应清晰、自然、可核查，避免夸张和营销式表达。</li>
+        <li>原文中的"约、近、超过、拟、计划、旨在"等限定语应在标题中保留。</li>
+        <li>避免使用 validate、prove、drive、transform 等可能强化因果或结果的动词，除非原文明确支持。</li>
+        <li>正式新闻标题中不使用 ~20% 这类符号化表达，应写作 about 20 percent、nearly 或 more than。</li>
+      </ul>
+    </section>
+    <section>
+      <title>限定语和研发阶段保留规则</title>
+      <ul>
+        <li>原文使用"可、有望、预计、或将、目前仍处于"等表达时，英文正文和标题都应保留相应的不确定性或阶段限制。</li>
+        <li>可使用 could、may、is expected to、is currently in ... phase 等表达。</li>
+        <li>不得把"可提升、可用于、有望实现"等潜在能力写成已经稳定实现或已经商业化应用。</li>
+      </ul>
+    </section>
+    <section>
+      <title>完整示例</title>
+      <p>以下是一个典型的输入和输出示例，演示五部分结果的实际形态和规则应用。</p>
+      <p><b>输入（中文科技新闻片段）：</b></p>
+      <codeblock>中国某科研团队研发的新型机器人样机近日完成测试。该样机有望将分拣
+效率提升约 20%，目前仍处于实验室验证阶段。</codeblock>
+      <p><b>输出（五部分结构化结果）：</b></p>
+      <codeblock>Final Translation
+A Chinese research team has developed a new robot prototype that recently
+completed testing. The prototype could improve sorting efficiency by about
+20 percent and is currently in the laboratory validation phase.
+
+Headline Options
+1. Chinese team tests robot prototype aimed at improving sorting efficiency
+2. New robot prototype completes testing in Chinese lab
+3. Chinese researchers test robot prototype in lab validation phase
+
+Term Table
+| 中文术语 | 推荐译法 | 处理说明 |
+| 样机 | prototype | 标准译法 |
+| 分拣效率 | sorting efficiency | 复合名词直译 |
+| 实验室验证阶段 | laboratory validation phase | 保留研发阶段信息 |
+
+Fact Checklist
+| 类型 | 原文信息 | 译文处理 | 状态 |
+| 数字 | 约 20% | about 20 percent | 已核对，保留限定语 |
+| 阶段 | 实验室验证阶段 | laboratory validation phase | 已保留，未写成商业化 |
+| 机构 | 某科研团队 | a Chinese research team | 描述性译法，无官方名 |
+
+Human Review Notes
+- "某科研团队"未给出具体机构名，正文使用描述性译法，如需正式发布请确认团队官方英文名称。</codeblock>
+      <note>注意示例中三个规则的应用：约 20% 译为 about 20 percent（未用 ~20%）；"有望"译为 could（未写成已实现）；"目前仍处于实验室验证阶段"完整保留为 is currently in ... phase（未写成商业化应用）。</note>
+    </section>
+  </refbody>
+</reference>

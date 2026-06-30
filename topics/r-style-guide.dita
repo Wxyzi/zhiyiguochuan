@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="r-style-guide" xml:lang="zh-CN">
+  <title>写作风格规范</title>
+  <shortdesc>写作风格规范用于保证智译国传智能体文档准确、清晰、一致、可翻译和便于维护。</shortdesc>
+  <refbody>
+    <section>
+      <title>通用原则</title>
+      <simpletable>
+        <sthead>
+          <stentry>原则</stentry>
+          <stentry>要求</stentry>
+          <stentry>示例</stentry>
+        </sthead>
+        <strow>
+          <stentry>面向用户任务</stentry>
+          <stentry>标题和步骤应描述用户目标，而不是内部实现。</stentry>
+          <stentry>使用"运行翻译工作流"，不要使用"调用六步处理流水线"。</stentry>
+        </strow>
+        <strow>
+          <stentry>先结论后细节</stentry>
+          <stentry>shortdesc 应说明本 topic 能解决什么问题。</stentry>
+          <stentry>"运行翻译工作流可以生成译文、标题备选、术语表和事实核对表。"</stentry>
+        </strow>
+        <strow>
+          <stentry>动词一致</stentry>
+          <stentry>task 步骤使用清晰动作动词。</stentry>
+          <stentry>提交、查看、检查、确认、保存。</stentry>
+        </strow>
+        <strow>
+          <stentry>术语一致</stentry>
+          <stentry>同一概念在全文使用同一名称。</stentry>
+          <stentry>统一使用"任务参数"，不要混用"任务画像"或"配置表单"。</stentry>
+        </strow>
+        <strow>
+          <stentry>可本地化</stentry>
+          <stentry>避免长句、隐喻和不必要口语表达。</stentry>
+          <stentry>将长句拆分为两句或列表。</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>task topic 写法</title>
+      <ul>
+        <li>每个 <xmlelement>step</xmlelement> 只写一个主要动作。</li>
+        <li>将说明性内容放入 <xmlelement>info</xmlelement>，不要把多个动作塞入一个 <xmlelement>cmd</xmlelement>。</li>
+        <li>需要说明操作结果时使用 <xmlelement>stepresult</xmlelement> 或 <xmlelement>result</xmlelement>。</li>
+        <li>需要引导下一步时使用 <xmlelement>postreq</xmlelement> 和 <xmlelement>xref</xmlelement>。</li>
+      </ul>
+    </section>
+    <section>
+      <title>中英文术语写法</title>
+      <simpletable>
+        <sthead>
+          <stentry>中文术语</stentry>
+          <stentry>英文写法</stentry>
+          <stentry>备注</stentry>
+        </sthead>
+        <strow>
+          <stentry>智译国传智能体</stentry>
+          <stentry>GlobalTech News Translator Agent</stentry>
+          <stentry>首次出现可中英并列，后文保持一致。</stentry>
+        </strow>
+        <strow>
+          <stentry>术语表（输出部分）</stentry>
+          <stentry>Term Table</stentry>
+          <stentry>智能体输出的五部分之一，不要与 TBX 术语库混用。</stentry>
+        </strow>
+        <strow>
+          <stentry>事实核对表</stentry>
+          <stentry>Fact Checklist</stentry>
+          <stentry>智能体输出的人名、机构、数字等核对清单。</stentry>
+        </strow>
+        <strow>
+          <stentry>人工复核提示</stentry>
+          <stentry>Human Review Notes</stentry>
+          <stentry>智能体输出的需要人工复核的内容。</stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </refbody>
+</reference>

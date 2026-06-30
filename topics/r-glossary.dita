@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="r-glossary" xml:lang="zh-CN">
+  <title>术语表</title>
+  <shortdesc>术语表定义本文档中反复出现的关键概念，帮助用户理解智译国传智能体的工作方式。</shortdesc>
+  <refbody>
+    <section>
+      <title>关键术语</title>
+      <dl>
+        <dlentry>
+          <dt>编译</dt>
+          <dd>在不添加无依据事实的前提下，按英文新闻写作习惯对中文科技新闻进行翻译和适度改写，包括调整句序、标题和导语结构。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>任务参数</dt>
+          <dd>描述本次翻译任务目标的一组配置，包括目标读者、输出模式、术语来源和领域。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>术语表（Term Table）</dt>
+          <dd>智能体输出的结构化列表，记录术语的中文原文、推荐译法和处理说明，用于约束专有名词、机构名称和技术概念的译法一致性。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>事实核对表（Fact Checklist）</dt>
+          <dd>智能体输出的人名、机构、时间、数字、比例、政策名称和因果关系核对清单，用于人工核查事实准确性。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>人工复核提示（Human Review Notes）</dt>
+          <dd>智能体提示需要人工复核的内容和原因，帮助用户聚焦高风险位置。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>限定语</dt>
+          <dd>原文中表示不确定性或阶段限制的表达，如"约、近、超过、拟、计划、旨在、可、有望、预计、或将"。英文译文必须保留相应的不确定性。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>标题克制</dt>
+          <dd>标题避免使用 validate、prove、drive、transform 等强化因果或结果的动词，避免夸大和营销式表达。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>三层知识库</dt>
+          <dd>智译国传智能体挂载的三类知识资源：术语表、英文科技新闻风格指南、基于新华社英文网语料提炼的风格模式。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>RAG</dt>
+          <dd>检索增强生成方法，用于在生成译文或审校建议前检索术语、背景资料或可比语料。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>CAT 工具</dt>
+          <dd>计算机辅助翻译工具，例如 Trados 和 memoQ，可用于管理翻译记忆库、术语库和一致性检查。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>TMX</dt>
+          <dd>Translation Memory eXchange 的缩写，用于在不同翻译工具之间交换翻译记忆库。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>TBX</dt>
+          <dd>TermBase eXchange 的缩写，用于交换术语库数据。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>XLIFF</dt>
+          <dd>XML Localization Interchange File Format 的缩写，用于本地化和翻译流程中的内容交换。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>DITA topic</dt>
+          <dd>DITA 中可独立编写、复用和发布的内容单元。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>DITA map</dt>
+          <dd>组织多个 topic 的目录和发布结构，决定文档的阅读路径和输出顺序。</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="c-documentation-model" xml:lang="zh-CN">
+  <title>DITA 文档开发模型</title>
+  <shortdesc>智译国传智能体技术文档采用基于主题的 DITA 写作模型，便于复用、审校、发布和后续版本维护。</shortdesc>
+  <conbody>
+    <p>本文档使用 DITA topic 管理内容单元，使用 DITA map 组织阅读顺序和发布结构。每个 topic 只解决一个明确问题，避免把概念解释、操作步骤和参数参考混写在同一篇文档中。</p>
+    <section>
+      <title>内容类型划分</title>
+      <simpletable>
+        <sthead>
+          <stentry>topic 类型</stentry>
+          <stentry>用途</stentry>
+          <stentry>本文档示例</stentry>
+        </sthead>
+        <strow>
+          <stentry>concept</stentry>
+          <stentry>说明”是什么”和”为什么”，帮助用户理解系统、场景和工作机制。</stentry>
+          <stentry>概述、受众和使用场景、智能体定位与工作原则、工作流模型、DITA 文档开发模型。</stentry>
+        </strow>
+        <strow>
+          <stentry>task</stentry>
+          <stentry>说明”怎么做”，按照用户目标组织步骤。</stentry>
+          <stentry>快速开始、配置翻译任务参数、运行翻译工作流、审校和导出结果。</stentry>
+        </strow>
+        <strow>
+          <stentry>reference</stentry>
+          <stentry>提供可查询的规则、表格、参数、错误和检查清单。</stentry>
+          <stentry>输入输出格式、配置项参考、回复格式与质量规则、常见问题、术语表、写作风格规范、发布前质量检查清单。</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>单源发布思路</title>
+      <ul>
+        <li>将稳定内容写成独立 topic，避免在不同手册中重复复制。</li>
+        <li>使用 ditamap 决定内容顺序，面向不同读者组合不同 topic。</li>
+        <li>用 reference topic 管理术语、配置、错误和检查清单，便于后续统一维护。</li>
+        <li>在 Oxygen XML Editor 28.1 中通过 DITA Maps Manager 管理地图、交叉引用和发布场景。</li>
+      </ul>
+    </section>
+    <section>
+      <title>版本维护原则</title>
+      <ul>
+        <li>功能变更优先更新 task 和 reference topic。</li>
+        <li>受众、场景或系统边界变化优先更新 concept topic。</li>
+        <li>发布前应运行完整性检查，确认 map 中不存在断链、重复 ID 或缺失图片。</li>
+      </ul>
+    </section>
+  </conbody>
+</concept>

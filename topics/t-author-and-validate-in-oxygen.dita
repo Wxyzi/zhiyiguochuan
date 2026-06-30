@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="t-author-and-validate-in-oxygen" xml:lang="zh-CN">
+  <title>维护者：在 Oxygen XML Editor 28.1 中编辑、验证和发布文档</title>
+  <shortdesc>本主题面向文档维护者，说明如何使用 Oxygen XML Editor 28.1 管理、验证和发布这套 DITA 文档。</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>你已经安装 Oxygen XML Editor 28.1。</li>
+        <li>你已经打开本项目文件夹，并能访问 <filepath>maps/zhiya-guochuan-agent.ditamap</filepath>。</li>
+        <li>如果使用中文界面，请将 English UI 名称对应到中文菜单，例如 Validate and Check for Completeness 对应“验证并检查完整性”。</li>
+      </ul>
+    </prereq>
+    <context>
+      <p>本主题不是智能体终端用户操作说明，而是面向维护本文档的资料开发人员。</p>
+      <p>推荐从 DITA map 入口管理文档，而不是单独打开零散 topic。这样可以在 Oxygen 中检查 topicref、xref、图片、key 和发布场景是否完整。</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>在 Oxygen XML Editor 28.1 中切换到 DITA 相关工作区。</cmd>
+        <info>
+          <p>英文界面通常使用 <uicontrol>Window</uicontrol> &gt; <uicontrol>Open Perspective</uicontrol> &gt; <uicontrol>DITA</uicontrol>。中文界面可在“窗口”菜单中查找对应视图。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>打开 DITA Maps Manager，并加载 <filepath>maps/zhiya-guochuan-agent.ditamap</filepath>。</cmd>
+        <stepresult>
+          <p>地图树中显示概念说明、使用任务、维护者说明、参考信息等章节。</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>在 DITA Maps Manager 中双击 topic 进行编辑。</cmd>
+        <info>
+          <p>编写 task topic 时，优先使用 <xmlelement>prereq</xmlelement>、<xmlelement>steps</xmlelement>、<xmlelement>step</xmlelement>、<xmlelement>cmd</xmlelement>、<xmlelement>result</xmlelement> 和 <xmlelement>postreq</xmlelement> 组织内容。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>为相关 topic 添加交叉引用。</cmd>
+        <info>
+          <p>例如，在运行工作流 topic 的后续步骤中链接到审校和导出 topic，在配置 topic 中链接到配置项参考。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>运行 Validate and Check for Completeness。</cmd>
+        <stepresult>
+          <p>Oxygen 检查 XML 结构、map 引用、交叉引用、图片引用和常见完整性问题。</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>根据检查结果修复错误和警告。</cmd>
+        <info>
+          <p>优先处理断链、无效 XML、重复 ID 和缺失资源。内容风格问题可按照<xref href="r-style-guide.dita">写作风格规范</xref>处理。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>配置并运行发布场景。</cmd>
+        <info>
+          <p>常见发布场景包括 PDF 和 WebHelp Responsive。发布前请参考<xref href="r-quality-checklist.dita">发布前质量检查清单</xref>。</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>文档通过完整性检查后，可以发布为可阅读、可审校、可归档的技术文档输出。</p>
+    </result>
+  </taskbody>
+</task>

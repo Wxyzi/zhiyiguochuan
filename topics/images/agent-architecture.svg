@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="420" viewBox="0 0 780 420" font-family="SimHei, 'Microsoft YaHei', sans-serif">
+  <!-- 智译国传智能体架构图 -->
+
+  <!-- 标题 -->
+  <text x="390" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a3a5c">智译国传智能体架构</text>
+
+  <!-- 用户层 -->
+  <rect x="300" y="55" width="180" height="44" rx="6" fill="#e8f1fb" stroke="#2a6fb5" stroke-width="1.5"/>
+  <text x="390" y="73" text-anchor="middle" font-size="13" font-weight="700" fill="#1a3a5c">用户</text>
+  <text x="390" y="90" text-anchor="middle" font-size="11" fill="#3a5a7a">提交中文科技新闻</text>
+
+  <!-- 箭头：用户 -> 平台 -->
+  <line x1="390" y1="99" x2="390" y2="120" stroke="#2a6fb5" stroke-width="1.5"/>
+  <polygon points="385,118 395,118 390,128" fill="#2a6fb5"/>
+
+  <!-- 运行平台 -->
+  <rect x="280" y="130" width="220" height="44" rx="6" fill="#fff4e6" stroke="#e88a1a" stroke-width="1.5"/>
+  <text x="390" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#9a5a0a">扣子 coze.cn 平台</text>
+  <text x="390" y="165" text-anchor="middle" font-size="11" fill="#a86a1a">对话式交互入口</text>
+
+  <!-- 智能体核心框 -->
+  <rect x="40" y="195" width="700" height="200" rx="8" fill="#f5f8fc" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="60" y="216" font-size="13" font-weight="700" fill="#1a3a5c">智译国传智能体</text>
+
+  <!-- 箭头：平台 -> 智能体 -->
+  <line x1="390" y1="174" x2="390" y2="195" stroke="#e88a1a" stroke-width="1.5"/>
+  <polygon points="385,193 395,193 390,203" fill="#e88a1a"/>
+
+  <!-- 三层知识库（左侧） -->
+  <text x="170" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="#2d6a4f">三层知识库</text>
+  <rect x="60" y="250" width="220" height="32" rx="4" fill="#e6f4ea" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="170" y="270" text-anchor="middle" font-size="11" fill="#1d4d36">术语表（CSV，114 条）</text>
+  <rect x="60" y="290" width="220" height="32" rx="4" fill="#e6f4ea" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="170" y="310" text-anchor="middle" font-size="11" fill="#1d4d36">英文科技新闻风格指南</text>
+  <rect x="60" y="330" width="220" height="32" rx="4" fill="#e6f4ea" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="170" y="350" text-anchor="middle" font-size="11" fill="#1d4d36">新华社风格模式（语料驱动）</text>
+
+  <!-- 六步工作流（右侧） -->
+  <text x="540" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="#6a2d4f">六步工作流</text>
+
+  <rect x="330" y="250" width="200" height="26" rx="4" fill="#fce8f0" stroke="#a83d6e" stroke-width="1"/>
+  <text x="430" y="268" text-anchor="middle" font-size="11" fill="#7a2a52">① 输入诊断</text>
+  <polygon points="427,276 433,276 430,282" fill="#a83d6e"/>
+  <rect x="330" y="282" width="200" height="26" rx="4" fill="#fce8f0" stroke="#a83d6e" stroke-width="1"/>
+  <text x="430" y="300" text-anchor="middle" font-size="11" fill="#7a2a52">② 事实抽取</text>
+  <polygon points="427,308 433,308 430,314" fill="#a83d6e"/>
+  <rect x="330" y="314" width="200" height="26" rx="4" fill="#fce8f0" stroke="#a83d6e" stroke-width="1"/>
+  <text x="430" y="332" text-anchor="middle" font-size="11" fill="#7a2a52">③ 术语规范</text>
+  <polygon points="427,340 433,340 430,346" fill="#a83d6e"/>
+  <rect x="330" y="346" width="200" height="26" rx="4" fill="#fce8f0" stroke="#a83d6e" stroke-width="1"/>
+  <text x="430" y="364" text-anchor="middle" font-size="11" fill="#7a2a52">④ 译文生成</text>
+
+  <rect x="560" y="282" width="160" height="26" rx="4" fill="#fce8f0" stroke="#a83d6e" stroke-width="1"/>
+  <text x="640" y="300" text-anchor="middle" font-size="11" fill="#7a2a52">⑤ 质量检查</text>
+  <polygon points="637,308 643,308 640,314" fill="#a83d6e"/>
+  <rect x="560" y="314" width="160" height="26" rx="4" fill="#fce8f0" stroke="#a83d6e" stroke-width="1"/>
+  <text x="640" y="332" text-anchor="middle" font-size="11" fill="#7a2a52">⑥ 最终整合</text>
+
+  <!-- 知识库 -> 工作流 调用线 -->
+  <line x1="280" y1="306" x2="330" y2="306" stroke="#2d6a4f" stroke-width="1" stroke-dasharray="4 3"/>
+  <polygon points="328,303 328,309 334,306" fill="#2d6a4f"/>
+  <text x="305" y="300" text-anchor="middle" font-size="9" fill="#2d6a4f">调用</text>
+
+  <!-- ④ -> ⑤ 连接 -->
+  <line x1="530" y1="359" x2="560" y2="295" stroke="#a83d6e" stroke-width="1" stroke-dasharray="3 3"/>
+</svg>

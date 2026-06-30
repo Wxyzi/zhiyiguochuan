@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="c-overview" xml:lang="zh-CN">
+  <title>智译国传智能体概述</title>
+  <shortdesc>智译国传智能体是一个面向中文科技新闻国际传播的英译、编译与质量检查智能体，运行在扣子（coze.cn）平台上。</shortdesc>
+  <conbody>
+    <p><keyword keyref="product-name"/>面向需要将中文科技新闻、政策科技动态和机器人产业报道等内容转化为英文新闻的用户。智能体的目标不是机械直译，而是在不添加无依据事实的前提下，对原文进行符合英文新闻习惯的翻译和适度编译，输出可追溯、可审校的结构化结果。</p>
+    <p>与传统翻译工具的"黑盒直译"不同，智译国传把翻译过程拆解为六个可解释的步骤，并在输出中提供术语表、事实核对表和人工复核提示，让用户能够核查智能体的处理依据。</p>
+    <section>
+      <title>核心能力</title>
+      <ul>
+        <li>识别源文本的主题、体裁、目标读者和输出需求。</li>
+        <li>抽取关键事实、实体、数字、时间和技术术语，作为翻译依据。</li>
+        <li>调用知识库中的推荐译法，保证术语一致性。</li>
+        <li>生成符合英文新闻写作习惯的译文和标题备选。</li>
+        <li>检查漏译、误译、夸大标题和无依据增补等质量问题。</li>
+        <li>输出译文、术语表、事实核对表和人工复核提示。</li>
+      </ul>
+    </section>
+    <section>
+      <title>技术架构</title>
+      <fig>
+        <title>智译国传智能体架构</title>
+        <image href="images/agent-architecture.svg" placement="break">
+          <alt>智译国传智能体由扣子平台入口、三层知识库和六步工作流模块组成。</alt>
+        </image>
+      </fig>
+      <p><keyword keyref="product-name"/>由三部分组成：运行平台、知识库和工作流模块。</p>
+      <dl>
+        <dlentry>
+          <dt>运行平台</dt>
+          <dd>智能体搭建在 <keyword keyref="platform-name"/> 平台上，用户通过对话式交互提交中文科技新闻，获取结构化翻译结果。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>知识库</dt>
+          <dd>智能体挂载三层知识库：术语表、英文科技新闻风格指南、基于新华社英文网语料提炼的风格模式。详细说明请参考<xref href="c-workflow-model.dita">工作流模型</xref>。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>工作流模块</dt>
+          <dd>智能体内部按输入诊断、事实抽取、术语规范、译文生成、质量检查和最终整合六个模块依次处理，最终输出五部分结构化结果。</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>质量边界</title>
+      <p><keyword keyref="product-name"/>可以提高英译和审校效率，但不替代人工编辑、事实核查和发布责任人。智能体不得添加原文没有支撑的新事实，不得编造机构英文名、人物身份、数据来源或政策背景，也不得把预测、计划、倡议改写为已经发生的事实。涉及政策、法律、数字、引语、机构名称和敏感议题时，必须进行人工复核。</p>
+      <ul>
+        <li>对事实密集型内容，优先核查数字、比例、时间、机构名和因果关系。</li>
+        <li>对标题和导语，重点检查是否存在夸大、绝对化或过度营销表达。</li>
+        <li>对正式发布内容，应由译者、编辑或业务负责人确认最终版本。</li>
+      </ul>
+    </section>
+    <section>
+      <title>文档范围</title>
+      <p>本文档说明智能体的基本概念、工作流模型、配置方法、使用流程、输入输出格式和常见错误处理方法。本文档不包含底层模型训练、私有化部署脚本和算法实现细节。</p>
+      <p audience="internal">内部备注：本智能体的评测指标和 A/B 实验数据见比赛仓库 outputs/ 目录，正式发布版本应通过 ditaval 排除此类内部内容。详细机制请参考<xref href="c-conditional-publishing.dita">条件化发布与多版本输出</xref>。</p>
+    </section>
+  </conbody>
+</concept>

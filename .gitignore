@@ -1,0 +1,32 @@
+# === 构建产物 (由 CI 自动生成,不入库) ===
+build/
+maps/temp/
+maps/out/
+*.pdf
+*.fo
+*.merged.html
+*.merged.xml
+*.style.xml
+
+# === Oxygen 临时文件 ===
+*.xpr
+.temp/
+.out/
+
+# === 操作系统 ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === 编辑器 ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === 临时脚本 ===
+run_publish.bat
+publish_log.txt
+preview/
+*.bak.css

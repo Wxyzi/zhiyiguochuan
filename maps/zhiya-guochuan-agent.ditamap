@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="zhiya-guochuan-agent-doc" xml:lang="zh-CN">
+  <title>智译国传智能体技术文档</title>
+  <topicmeta>
+    <shortdesc>本文档介绍智译国传智能体的用途、架构、配置、使用流程、输入输出格式和常见问题处理方法。</shortdesc>
+    <author>资料开发团队</author>
+    <critdates>
+      <created date="2026-06-04"/>
+      <revised modified="2026-06-09"/>
+    </critdates>
+  </topicmeta>
+
+  <topichead navtitle="复用资源" processing-role="resource-only">
+    <topicref href="../topics/common-reuse.dita"/>
+  </topichead>
+
+  <mapref href="keys.ditamap" processing-role="resource-only"/>
+
+  <topicref href="../topics/c-overview.dita" type="concept">
+    <topicref href="../topics/c-audience-and-scenarios.dita" type="concept"/>
+    <topicref href="../topics/c-agent-persona-and-principles.dita" type="concept"/>
+    <topicref href="../topics/c-workflow-model.dita" type="concept"/>
+  </topicref>
+
+  <topichead navtitle="使用任务" collection-type="sequence">
+    <topicref href="../topics/t-quick-start.dita" type="task"/>
+    <topicref href="../topics/t-configure-profile.dita" type="task"/>
+    <topicref href="../topics/t-run-translation-workflow.dita" type="task"/>
+    <topicref href="../topics/t-review-and-export.dita" type="task"/>
+  </topichead>
+
+  <topichead navtitle="维护者说明">
+    <topicref href="../topics/c-documentation-model.dita" type="concept"/>
+    <topicref href="../topics/c-conditional-publishing.dita" type="concept"/>
+    <topicref href="../topics/t-author-and-validate-in-oxygen.dita" type="task"/>
+    <topicref href="../topics/r-style-guide.dita" type="reference"/>
+    <topicref href="../topics/r-quality-checklist.dita" type="reference"/>
+  </topichead>
+
+  <topichead navtitle="参考信息">
+    <topicref href="../topics/r-input-output-formats.dita" type="reference"/>
+    <topicref href="../topics/r-configuration-reference.dita" type="reference"/>
+    <topicref href="../topics/r-error-messages.dita" type="reference"/>
+    <topicref href="../topics/r-response-format-and-rules.dita" type="reference"/>
+    <topicref href="../topics/r-glossary.dita" type="reference"/>
+  </topichead>
+
+  <reltable>
+    <relheader>
+      <relcolspec type="concept"/>
+      <relcolspec type="task"/>
+      <relcolspec type="reference"/>
+    </relheader>
+    <relrow>
+      <relcell>
+        <topicref href="../topics/c-overview.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/t-quick-start.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/r-response-format-and-rules.dita"/>
+      </relcell>
+    </relrow>
+    <relrow>
+      <relcell>
+        <topicref href="../topics/c-audience-and-scenarios.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/t-configure-profile.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/r-configuration-reference.dita"/>
+      </relcell>
+    </relrow>
+    <relrow>
+      <relcell>
+        <topicref href="../topics/c-workflow-model.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/t-run-translation-workflow.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/r-input-output-formats.dita"/>
+        <topicref href="../topics/r-configuration-reference.dita"/>
+      </relcell>
+    </relrow>
+    <relrow>
+      <relcell>
+        <topicref href="../topics/c-workflow-model.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/t-review-and-export.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/r-error-messages.dita"/>
+        <topicref href="../topics/r-glossary.dita"/>
+      </relcell>
+    </relrow>
+    <relrow>
+      <relcell>
+        <topicref href="../topics/c-agent-persona-and-principles.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/t-run-translation-workflow.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/r-response-format-and-rules.dita"/>
+        <topicref href="../topics/r-quality-checklist.dita"/>
+      </relcell>
+    </relrow>
+    <relrow>
+      <relcell>
+        <topicref href="../topics/c-documentation-model.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/t-author-and-validate-in-oxygen.dita"/>
+      </relcell>
+      <relcell>
+        <topicref href="../topics/r-style-guide.dita"/>
+        <topicref href="../topics/r-quality-checklist.dita"/>
+      </relcell>
+    </relrow>
+  </reltable>
+</map>

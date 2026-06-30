@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="keys" xml:lang="zh-CN">
+  <title>变量与术语 Key 定义</title>
+  <topicmeta>
+    <shortdesc>本 map 定义全文复用的 key，用于统一管理产品名、平台名、输出部分名等变量。修改此处即可全局生效。</shortdesc>
+  </topicmeta>
+
+  <!-- 产品名称 -->
+  <keydef keys="product-name">
+    <topicmeta>
+      <keywords>
+        <keyword>智译国传智能体</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <keydef keys="product-name-en">
+    <topicmeta>
+      <keywords>
+        <keyword>GlobalTech News Translator Agent</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <!-- 运行平台 -->
+  <keydef keys="platform-name">
+    <topicmeta>
+      <keywords>
+        <keyword>扣子（coze.cn）</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <!-- 输出部分名称 -->
+  <keydef keys="final-translation">
+    <topicmeta>
+      <keywords>
+        <keyword>Final Translation</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <keydef keys="headline-options">
+    <topicmeta>
+      <keywords>
+        <keyword>Headline Options</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <keydef keys="term-table">
+    <topicmeta>
+      <keywords>
+        <keyword>Term Table</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <keydef keys="fact-checklist">
+    <topicmeta>
+      <keywords>
+        <keyword>Fact Checklist</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <keydef keys="human-review-notes">
+    <topicmeta>
+      <keywords>
+        <keyword>Human Review Notes</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <!-- 默认语言对 -->
+  <keydef keys="source-language">
+    <topicmeta>
+      <keywords>
+        <keyword>中文</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <keydef keys="target-language">
+    <topicmeta>
+      <keywords>
+        <keyword>英文</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+</map>

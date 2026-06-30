@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="common-reuse" xml:lang="zh-CN">
+    <title>公共复用内容</title>
+    <body>
+        <note id="human-review-note" type="important">
+            AI 生成的翻译结果必须经过人工审校后才能正式发布。
+        </note>
+
+        <p id="terminology-note">
+            使用术语库和翻译记忆库可以提高译文的一致性和交付效率。
+        </p>
+        <note id="fact-check-note" type="important">
+            正式发布前，请核对人名、机构名、时间、数字、政策名称和因果关系是否与原文一致。
+        </note>
+
+        <p id="five-parts-output">
+            <keyword keyref="product-name"/>默认输出五部分结构化结果：Final Translation（译文）、Headline Options（标题备选）、Term Table（术语表）、Fact Checklist（事实核对表）和 Human Review Notes（人工复核提示）。
+        </p>
+
+        <p id="hedge-preservation-rule">
+            原文中的"约、近、超过、拟、计划、旨在、可、有望、预计、或将、目前仍处于"等限定语和阶段信息，英文译文必须保留相应的不确定性或阶段限制，可使用 could、may、is expected to、is currently in ... phase 等表达，不得改写为已经发生的事实。
+        </p>
+
+        <p id="headline-restraint-rule">
+            标题应清晰、自然、可核查，避免使用 validate、prove、drive、transform 等强化因果或结果的动词，避免夸大和营销式表达。正式新闻标题中不使用 ~20% 这类符号化写法，应写作 about 20 percent、nearly 或 more than。
+        </p>
+    </body>
+</topic>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="c-workflow-model" xml:lang="zh-CN">
+  <title>工作流模型</title>
+  <shortdesc>智译国传智能体采用六步可解释工作流，依次完成输入诊断、事实抽取、术语规范、译文生成、质量检查和最终整合，最终输出五部分结构化结果。</shortdesc>
+  <conbody>
+    <p><keyword keyref="product-name"/>把翻译过程拆解为六个步骤，每个步骤对应一个独立模块。这种设计让翻译过程可解释、可追溯，区别于传统翻译工具的"黑盒直译"。用户可以从输出的术语表和事实核对表中核查智能体的处理依据。</p>
+    <section>
+      <title>六步工作流</title>
+      <fig>
+        <title>六步翻译工作流</title>
+        <image href="images/workflow-six-steps.svg" placement="break">
+          <alt>智能体依次完成输入诊断、事实抽取、术语规范、译文生成、质量检查和最终整合六个步骤。</alt>
+        </image>
+      </fig>
+      <p>智能体在生成最终结果前，内部依次完成以下六个步骤：</p>
+      <ol>
+        <li><b>输入诊断。</b>判断文本主题、体裁、目标读者和输出需求，识别需要重点处理的风险点。</li>
+        <li><b>事实抽取。</b>从源文本中抽取人名、机构名、地名、数字、时间、比例、技术术语和因果关系，作为后续翻译和核查的依据。</li>
+        <li><b>术语规范。</b>调用知识库中的推荐译法，为术语生成处理表；对没有把握的术语给出候选译法，并标记为需要人工确认。</li>
+        <li><b>译文生成。</b>按英文新闻写作习惯生成译文和标题备选，允许调整句序、标题和导语结构，但不能夸大或增补无依据事实。</li>
+        <li><b>质量检查。</b>检查译文是否存在漏译、误译、夸大标题、限定语丢失和无依据增补等问题。</li>
+        <li><b>最终整合。</b>输出译文、标题备选、术语表、事实核对表和人工复核提示五部分结果。</li>
+      </ol>
+    </section>
+    <section>
+      <title>三层知识库</title>
+      <p>术语规范和译文生成步骤依赖三层知识库，各司其职：</p>
+      <simpletable>
+        <sthead>
+          <stentry>知识库</stentry>
+          <stentry>作用</stentry>
+        </sthead>
+        <strow>
+          <stentry>术语表</stentry>
+          <stentry>结构化表格，收录科技新闻常用术语的推荐译法、避免译法、类别和来源依据。术语表保证同一概念全文译法一致。</stentry>
+        </strow>
+        <strow>
+          <stentry>英文科技新闻风格指南</stentry>
+          <stentry>规定标题、导语、数字、归因表达和风险表达的处理原则，让译文符合英文新闻写作习惯。</stentry>
+        </strow>
+        <strow>
+          <stentry>新华社风格模式</stentry>
+          <stentry>基于新华社英文网科技频道语料统计提炼的风格规则，包括标题前缀频次、标题动词频次、归因表达频次和情态表达频次，为译写提供数据支撑。</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>质量控制原则</title>
+      <ul>
+        <li>对涉及事实、数字、引语、机构名称和政策表述的内容进行人工复核。</li>
+        <li>原文中的"约、近、超过、拟、计划、旨在"等限定语，英文标题和正文都应保留。</li>
+        <li>原文中的"可、有望、预计、或将、目前仍处于"等表达，应保留为相应的不确定性或阶段限制，不得改写为已经发生的事实。</li>
+        <li>对重复出现的术语建立术语表，避免同一概念多种译法。</li>
+        <li>外发布前保留源文、译文和审校意见。</li>
+      </ul>
+    </section>
+  </conbody>
+</concept>

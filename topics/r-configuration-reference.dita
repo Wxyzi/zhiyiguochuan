@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="r-configuration-reference" xml:lang="zh-CN">
+  <title>配置项参考</title>
+  <shortdesc>配置项用于在提交源文本前，控制智译国传智能体的目标读者、输出模式、术语来源和质量检查行为。</shortdesc>
+  <refbody>
+    <section>
+      <title>配置项说明</title>
+      <p><keyword keyref="product-name"/>通过对话交互接收配置。以下配置项可以在提交源文本时一并说明；未说明的项使用默认值。</p>
+      <simpletable relcolwidth="1.3* 4* 1.7*">
+        <sthead>
+          <stentry>配置项</stentry>
+          <stentry>说明</stentry>
+          <stentry>默认值</stentry>
+        </sthead>
+        <strow>
+          <stentry>source_language</stentry>
+          <stentry>源文本语言。智能体面向中文科技新闻英译，源语言固定为中文。</stentry>
+          <stentry>zh-CN</stentry>
+        </strow>
+        <strow>
+          <stentry>target_language</stentry>
+          <stentry>目标语言。智能体输出英文译文。</stentry>
+          <stentry>en</stentry>
+        </strow>
+        <strow>
+          <stentry>target_reader</stentry>
+          <stentry>目标读者类型，影响译文的专业深度和术语处理。</stentry>
+          <stentry>general_international_reader</stentry>
+        </strow>
+        <strow>
+          <stentry>output_mode</stentry>
+          <stentry>输出模式。full=完整五部分；translation_only=仅译文。</stentry>
+          <stentry>full</stentry>
+        </strow>
+        <strow>
+          <stentry>terminology_source</stentry>
+          <stentry>术语来源。默认内置术语表；有指定译法时可在对话说明。</stentry>
+          <stentry>built_in_glossary</stentry>
+        </strow>
+        <strow>
+          <stentry>domain</stentry>
+          <stentry>内容领域，帮助匹配相关术语和风格规则。</stentry>
+          <stentry>technology_news</stentry>
+        </strow>
+        <strow>
+          <stentry>headline_options</stentry>
+          <stentry>是否输出三个标题备选。</stentry>
+          <stentry>true</stentry>
+        </strow>
+        <strow>
+          <stentry>fact_check_enabled</stentry>
+          <stentry>是否输出事实核对表。</stentry>
+          <stentry>true</stentry>
+        </strow>
+        <strow>
+          <stentry>human_review_notes</stentry>
+          <stentry>是否输出人工复核提示。</stentry>
+          <stentry>true</stentry>
+        </strow>
+        <strow>
+          <stentry>preserve_hedges</stentry>
+          <stentry>是否强制保留"约、有望、预计、或将"等限定语。</stentry>
+          <stentry>true</stentry>
+        </strow>
+      </simpletable>
+      <note>output_mode 的完整值为 full_news_translation_with_quality_report（完整五部分）或 translation_only（仅译文），表格中简写为 full。target_reader 可取 general_international_reader（普通国际读者）、tech_industry_reader（科技产业读者）或 academic_reader（学术读者）。</note>
+    </section>
+    <section>
+      <title>默认设置</title>
+      <p>如果用户未说明配置项，智能体使用以下默认设置：</p>
+      <codeblock>{
+  "source_language": "zh-CN",
+  "target_language": "en",
+  "target_reader": "general_international_reader",
+  "output_mode": "full_news_translation_with_quality_report",
+  "domain": "technology_news_international_communication",
+  "headline_options": true,
+  "fact_check_enabled": true,
+  "human_review_notes": true,
+  "preserve_hedges": true
+}</codeblock>
+    </section>
+  </refbody>
+</reference>

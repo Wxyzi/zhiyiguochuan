@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="t-run-translation-workflow" xml:lang="zh-CN">
+  <title>运行翻译工作流</title>
+  <shortdesc>运行翻译工作流可以让智译国传智能体依次完成六步处理，输出译文、标题备选、术语表、事实核对表和人工复核提示。</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>你已经在<keyword keyref="platform-name"/>打开<keyword keyref="product-name"/>。</li>
+        <li>你已经准备好中文科技新闻源文本。</li>
+        <li>如果需要特殊术语处理，你已经说明目标读者和术语来源。</li>
+      </ul>
+    </prereq>
+    <context>
+      <p>翻译工作流适合处理需要保留事实准确性，同时需要符合英文新闻习惯的科技新闻。智能体内部按六步依次处理，用户只需提交源文本并查看结果。</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>提交中文科技新闻源文本。</cmd>
+        <info>
+          <p>智能体第一步完成输入诊断，判断文本主题、体裁、目标读者和输出需求。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>等待智能体完成事实抽取。</cmd>
+        <info>
+          <p>智能体从源文本中抽取人名、机构名、地名、数字、时间、比例、技术术语和因果关系，作为后续翻译和核查的依据。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>等待智能体完成术语规范。</cmd>
+        <info>
+          <p>智能体调用知识库中的推荐译法，为术语生成处理表；对没有把握的术语给出候选译法，并标记为需要人工确认。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>查看智能体生成的译文和标题备选。</cmd>
+        <info>
+          <p>智能体按英文新闻写作习惯生成译文和三个标题备选。译文允许调整句序和导语结构，但不能夸大或增补无依据事实。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>查看智能体的质量检查结果。</cmd>
+        <info>
+          <p>智能体检查译文是否存在漏译、误译、夸大标题、限定语丢失和无依据增补等问题。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>查看智能体输出的五部分结构化结果。</cmd>
+        <info>
+          <p>五部分结果包括：Final Translation（译文）、Headline Options（标题备选）、Term Table（术语表）、Fact Checklist（事实核对表）和 Human Review Notes（人工复核提示）。</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>系统输出一组可追溯、可审校的英文翻译结果，包含译文、术语处理依据、事实核对清单和需要人工复核的内容。</p>
+    </result>
+    <postreq>
+      <p>生成结果后，请执行<xref href="t-review-and-export.dita">审校和导出结果</xref>。如需了解输出结构的详细规则，请参考<xref href="r-response-format-and-rules.dita">回复格式与质量规则</xref>。</p>
+    </postreq>
+  </taskbody>
+</task>

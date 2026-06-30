@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="t-review-and-export" xml:lang="zh-CN">
+  <title>审校和导出结果</title>
+  <shortdesc>审校结果后，用户可以导出最终译文、术语表、事实核对表和人工复核提示。</shortdesc>
+  <taskbody>
+    <prereq>
+      <p>你已经完成至少一次翻译工作流。</p>
+      <note conref="common-reuse.dita#common-reuse/human-review-note"/>
+    </prereq>
+    <context>
+      <p>正式发布前，应由人工编辑确认事实、术语、语气和限定语是否符合发布要求。</p>
+      <note conref="common-reuse.dita#common-reuse/fact-check-note"/>
+    </context>
+    <steps>
+      <step>
+        <cmd>查看智能体输出的五部分结果。</cmd>
+        <info>
+          <p>依次核对 Final Translation（译文）、Headline Options（标题备选）、Term Table（术语表）、Fact Checklist（事实核对表）和 Human Review Notes（人工复核提示）。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>核对事实核对表。</cmd>
+        <info>
+          <p>重点检查人名、机构名、地点、数字、时间、引语和政策表述是否与原文一致。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>核对术语表的一致性。</cmd>
+        <info>
+          <p>确认同一术语在译文中使用统一译法，对标记为"需人工确认"的术语核查权威来源。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>核对标题和限定语。</cmd>
+        <info>
+          <p>检查标题是否存在夸大或营销式表达，检查"约、有望、预计、或将"等限定语是否保留。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>处理人工复核提示。</cmd>
+      </step>
+      <step>
+        <cmd>保存或复制最终结果，用于后续编辑、归档或发布。</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>系统导出经过人工确认的译文、术语表和事实核对表。处理记录可用于质量追踪、复盘和团队协作。</p>
+    </result>
+  </taskbody>
+</task>

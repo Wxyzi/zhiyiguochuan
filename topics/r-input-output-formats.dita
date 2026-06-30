@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="r-input-output-formats" xml:lang="zh-CN">
+  <title>输入和输出格式</title>
+  <shortdesc>智译国传智能体通过对话式交互接收中文文本，并输出包含译文、术语表和事实核对表的结构化结果。</shortdesc>
+  <refbody>
+    <section>
+      <title>输入格式</title>
+      <p><keyword keyref="product-name"/>运行在<keyword keyref="platform-name"/>上，通过对话界面接收源文本。以下为支持的输入方式：</p>
+      <simpletable>
+        <sthead>
+          <stentry>输入方式</stentry>
+          <stentry>用途</stentry>
+          <stentry>注意事项</stentry>
+        </sthead>
+        <strow>
+          <stentry>对话粘贴文本</stentry>
+          <stentry>直接粘贴中文科技新闻全文，是最常用的输入方式。</stentry>
+          <stentry>适合单篇新闻处理。建议单次控制在合理篇幅内。</stentry>
+        </strow>
+        <strow>
+          <stentry>分段提交</stentry>
+          <stentry>对长篇报道分段提交，分别获取结果。</stentry>
+          <stentry>分段处应选择自然段落边界，避免切断事实和因果。</stentry>
+        </strow>
+        <strow>
+          <stentry>附带任务说明</stentry>
+          <stentry>在源文本前说明目标读者、输出模式和术语要求。</stentry>
+          <stentry>说明应简洁明确，便于智能体识别配置意图。</stentry>
+        </strow>
+      </simpletable>
+      <note>智能体当前通过对话交互接收文本，不直接解析 Word、PDF 或图片文件。如需处理文档中的内容，请先提取为纯文本再提交。</note>
+    </section>
+    <section>
+      <title>输出格式</title>
+      <p>智能体默认输出五部分结构化结果，可通过对话保存或复制：</p>
+      <simpletable>
+        <sthead>
+          <stentry>输出部分</stentry>
+          <stentry>包含内容</stentry>
+        </sthead>
+        <strow>
+          <stentry>Final Translation</stentry>
+          <stentry>完整英文译文。</stentry>
+        </strow>
+        <strow>
+          <stentry>Headline Options</stentry>
+          <stentry>三个英文标题备选。</stentry>
+        </strow>
+        <strow>
+          <stentry>Term Table</stentry>
+          <stentry>中文术语、推荐译法和处理说明。</stentry>
+        </strow>
+        <strow>
+          <stentry>Fact Checklist</stentry>
+          <stentry>人名、机构、时间、数字、政策名称和因果关系的核对清单。</stentry>
+        </strow>
+        <strow>
+          <stentry>Human Review Notes</stentry>
+          <stentry>需要人工复核的内容和原因。</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>与翻译工具的衔接</title>
+      <p>智能体输出的术语表和事实核对表可以整理为标准格式，供下游 CAT 工具或翻译记忆库使用：</p>
+      <simpletable>
+        <sthead>
+          <stentry>格式</stentry>
+          <stentry>用途</stentry>
+        </sthead>
+        <strow>
+          <stentry>CSV</stentry>
+          <stentry>把 Term Table 导出为 CSV，导入术语库工具，供后续翻译任务复用。</stentry>
+        </strow>
+        <strow>
+          <stentry>TMX</stentry>
+          <stentry>Translation Memory eXchange，用于在不同翻译工具之间交换翻译记忆库。</stentry>
+        </strow>
+        <strow>
+          <stentry>TBX</stentry>
+          <stentry>TermBase eXchange，用于交换术语库数据。</stentry>
+        </strow>
+        <strow>
+          <stentry>XLIFF</stentry>
+          <stentry>XML Localization Interchange File Format，用于本地化和翻译流程中的内容交换。</stentry>
+        </strow>
+      </simpletable>
+      <p>这些格式不是智能体直接导入导出的格式，而是术语表和译文进入专业翻译工作流时的标准交换格式。</p>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="520" viewBox="0 0 780 520" font-family="SimHei, 'Microsoft YaHei', sans-serif">
+  <!-- 六步翻译工作流图 -->
+
+  <text x="390" y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#1a3a5c">智译国传六步翻译工作流</text>
+
+  <!-- 输入 -->
+  <rect x="310" y="55" width="160" height="38" rx="6" fill="#e8f1fb" stroke="#2a6fb5" stroke-width="1.5"/>
+  <text x="390" y="79" text-anchor="middle" font-size="12" font-weight="700" fill="#1a3a5c">中文科技新闻源文本</text>
+  <line x1="390" y1="93" x2="390" y2="112" stroke="#2a6fb5" stroke-width="1.5"/>
+  <polygon points="385,110 395,110 390,120" fill="#2a6fb5"/>
+
+  <!-- 步骤 1 -->
+  <rect x="60" y="125" width="660" height="50" rx="6" fill="#fce8f0" stroke="#a83d6e" stroke-width="1.5"/>
+  <text x="90" y="148" font-size="13" font-weight="700" fill="#7a2a52">① 输入诊断</text>
+  <text x="90" y="166" font-size="11" fill="#7a2a52">判断文本主题、体裁、目标读者和输出需求，识别需要重点处理的风险点。</text>
+  <line x1="390" y1="175" x2="390" y2="190" stroke="#a83d6e" stroke-width="1.5"/>
+  <polygon points="385,188 395,188 390,198" fill="#a83d6e"/>
+
+  <!-- 步骤 2 -->
+  <rect x="60" y="200" width="660" height="50" rx="6" fill="#fce8f0" stroke="#a83d6e" stroke-width="1.5"/>
+  <text x="90" y="223" font-size="13" font-weight="700" fill="#7a2a52">② 事实抽取</text>
+  <text x="90" y="241" font-size="11" fill="#7a2a52">抽取人名、机构名、地名、数字、时间、比例、技术术语和因果关系。</text>
+  <line x1="390" y1="250" x2="390" y2="265" stroke="#a83d6e" stroke-width="1.5"/>
+  <polygon points="385,263 395,263 390,273" fill="#a83d6e"/>
+
+  <!-- 步骤 3 -->
+  <rect x="60" y="275" width="660" height="50" rx="6" fill="#fce8f0" stroke="#a83d6e" stroke-width="1.5"/>
+  <text x="90" y="298" font-size="13" font-weight="700" fill="#7a2a52">③ 术语规范</text>
+  <text x="90" y="316" font-size="11" fill="#7a2a52">调用知识库推荐译法，生成术语处理表；不确定项标记"需人工确认"。</text>
+  <line x1="390" y1="325" x2="390" y2="340" stroke="#a83d6e" stroke-width="1.5"/>
+  <polygon points="385,338 395,338 390,348" fill="#a83d6e"/>
+
+  <!-- 步骤 4 -->
+  <rect x="60" y="350" width="660" height="50" rx="6" fill="#fce8f0" stroke="#a83d6e" stroke-width="1.5"/>
+  <text x="90" y="373" font-size="13" font-weight="700" fill="#7a2a52">④ 译文生成</text>
+  <text x="90" y="391" font-size="11" fill="#7a2a52">按英文新闻习惯生成译文和三个标题备选，允许调句序，不能夸大增补。</text>
+  <line x1="390" y1="400" x2="390" y2="415" stroke="#a83d6e" stroke-width="1.5"/>
+  <polygon points="385,413 395,413 390,423" fill="#a83d6e"/>
+
+  <!-- 步骤 5 -->
+  <rect x="60" y="425" width="320" height="50" rx="6" fill="#fce8f0" stroke="#a83d6e" stroke-width="1.5"/>
+  <text x="90" y="448" font-size="13" font-weight="700" fill="#7a2a52">⑤ 质量检查</text>
+  <text x="90" y="466" font-size="11" fill="#7a2a52">检查漏译、误译、夸大、限定语丢失。</text>
+  <line x1="220" y1="475" x2="220" y2="490" stroke="#a83d6e" stroke-width="1.5"/>
+  <polygon points="215,488 225,488 220,498" fill="#a83d6e"/>
+  <line x1="220" y1="498" x2="388" y2="498" stroke="#a83d6e" stroke-width="1.5"/>
+
+  <!-- 步骤 6 -->
+  <rect x="400" y="425" width="320" height="50" rx="6" fill="#e6f4ea" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="430" y="448" font-size="13" font-weight="700" fill="#1d4d36">⑥ 最终整合</text>
+  <text x="430" y="466" font-size="11" fill="#1d4d36">输出五部分结构化结果。</text>
+</svg>

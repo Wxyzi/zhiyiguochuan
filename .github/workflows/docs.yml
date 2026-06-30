@@ -1,0 +1,79 @@
+# ============================================================================
+#  智译国传智能体技术文档 - GitHub Actions CI/CD 流水线
+#  功能: push 时自动校验 DITA 结构 + 构建 PDF
+#  对标: Docs-as-Code 工程化实践
+# ============================================================================
+name: 文档构建发布
+
+# ---------- 触发条件 ----------
+on:
+  push:
+    branches: [main, master]       # 主分支 push 触发正式构建
+    paths:                         # 仅文档变更才触发(避免无谓构建)
+      - 'topics/**'
+      - 'maps/**'
+      - 'styles/**'
+      - 'ditaval/**'
+      - '.github/workflows/**'
+  pull_request:
+    branches: [main, master]       # PR 触发预览构建
+
+# ---------- 并发控制(同一分支只跑最新一次) ----------
+concurrency:
+  group: docs-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      # 1. 拉取代码
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      # 2. 安装 Java (DITA-OT 依赖 JRE)
+      - name: 安装 Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 3. 下载并安装 DITA-OT 4.2.4
+      - name: 安装 DITA-OT
+        run: |
+          wget -q https://github.com/dita-ot/dita-ot/releases/download/4.2.4/dita-ot-4.2.4.zip
+          unzip -q dita-ot-4.2.4.zip
+          echo "DITA-OT 安装完成"
+
+      # 4. 校验 DITA 结构 (质量门禁: 失败则阻断)
+      - name: 校验 DITA 结构
+        run: |
+          dita-ot-4.2.4/bin/dita validate \
+            -i maps/zhiya-guochuan-agent.ditamap \
+            --outer.control=quiet
+
+      # 5. 构建 PDF (企业级排版)
+      - name: 构建 PDF
+        run: |
+          dita-ot-4.2.4/bin/dita \
+            -i maps/zhiya-guochuan-agent.ditamap \
+            -f pdf-css-html5 \
+            -o output/ \
+            --args.output.base=zhiya-guochuan-agent \
+            --args.css=styles/zh-cn-pdf.css \
+            --outer.control=quiet
+
+      # 6. 上传构建产物 (可在 Actions 界面下载,保留 90 天)
+      - name: 上传 PDF 产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: zhiya-guochuan-agent-pdf
+          path: output/*.pdf
+          retention-days: 90
+
+      # 7. PR 预览通知 (在 PR 评论里贴构建状态)
+      - name: PR 构建通知
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "✅ 文档构建成功,可在 Actions 产物中下载 PDF 预览"

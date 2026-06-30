@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="r-error-messages" xml:lang="zh-CN">
+  <title>常见问题和处理方法</title>
+  <shortdesc>常见问题通常与源文本质量、配置说明、术语处理和输出结构有关。</shortdesc>
+  <refbody>
+    <section>
+      <title>问题列表</title>
+      <simpletable>
+        <sthead>
+          <stentry>问题现象</stentry>
+          <stentry>可能原因</stentry>
+          <stentry>处理方法</stentry>
+        </sthead>
+        <strow>
+          <stentry>译文保留了过多中文表达或直译腔。</stentry>
+          <stentry>未说明目标读者，或源文本包含难以直译的文化负载词。</stentry>
+          <stentry>明确说明目标读者，并提示智能体按英文新闻习惯调整表达。</stentry>
+        </strow>
+        <strow>
+          <stentry>术语译法不一致。</stentry>
+          <stentry>同一术语在文中多次出现，智能体给出不同译法。</stentry>
+          <stentry>在配置时指定术语译法，或要求智能体统一使用术语表中的推荐译法。</stentry>
+        </strow>
+        <strow>
+          <stentry>标题出现夸大或营销式表达。</stentry>
+          <stentry>源文本包含宣传性表达，智能体未充分克制。</stentry>
+          <stentry>提醒智能体遵循标题克制原则，避免使用 validate、prove、drive、transform 等强化因果的动词。</stentry>
+        </strow>
+        <strow>
+          <stentry>"约 20%"被写成"20%"。</stentry>
+          <stentry>智能体省略了限定语。</stentry>
+          <stentry>要求智能体保留限定语，正式新闻标题中应写作 about 20 percent、nearly 或 more than。</stentry>
+        </strow>
+        <strow>
+          <stentry>"有望实现"被写成已经实现。</stentry>
+          <stentry>智能体把潜在能力写成既成事实。</stentry>
+          <stentry>要求智能体保留不确定性，使用 could、may、is expected to 等表达。</stentry>
+        </strow>
+        <strow>
+          <stentry>输出缺少术语表或事实核对表。</stentry>
+          <stentry>输出模式设置为仅译文，或智能体判断无明显高风险项。</stentry>
+          <stentry>确认输出模式为完整结果；如果仍缺失，要求智能体补充对应部分。</stentry>
+        </strow>
+        <strow>
+          <stentry>机构英文名标记为"需人工确认"。</stentry>
+          <stentry>原文未提供正式英文名称，智能体未自行编造官方译名。</stentry>
+          <stentry>这是智能体的正确行为。请人工核查权威来源后确认正式译名。</stentry>
+        </strow>
+        <strow>
+          <stentry>Validate and Check for Completeness 提示断链。</stentry>
+          <stentry>DITA map 中引用的 topic、图片或交叉引用目标不存在。</stentry>
+          <stentry>在 Oxygen XML Editor 28.1 中打开提示位置，修正 href 或补齐缺失文件。</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>排查建议</title>
+      <ul>
+        <li>先用一段短文本测试，确认问题是否稳定复现。</li>
+        <li>检查是否在配置说明中遗漏了目标读者或输出模式。</li>
+        <li>对术语不一致问题，优先核查是否同一概念存在多种译法。</li>
+        <li>保存源文本、配置说明和输出结果，便于复盘和技术支持定位问题。</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>

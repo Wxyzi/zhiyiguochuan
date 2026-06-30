@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="c-conditional-publishing" xml:lang="zh-CN">
+  <title>条件化发布与多版本输出</title>
+  <shortdesc>条件化发布让一套内容源按产品型号、目标读者或发布场景，输出不同的文档版本。</shortdesc>
+  <conbody>
+    <p>当同一套文档需要服务于不同场景时（例如内部版与客户版、不同产品型号、不同读者角色），反复复制内容会带来维护负担和不一致风险。DITA 通过属性标记和 ditaval 过滤机制实现"一套源、多版本输出"。</p>
+
+    <section>
+      <title>核心机制</title>
+      <p>条件化发布由两部分组成：</p>
+      <dl>
+        <dlentry>
+          <dt>profiling 属性</dt>
+          <dd>在内容元素上标记属性，声明这段内容属于哪个受众、哪个平台、哪个产品。常用属性包括 audience（受众）、product（产品）、platform（平台）、otherprops（其他）。</dd>
+        </dlentry>
+        <dlentry>
+          <dt>ditaval 文件</dt>
+          <dd>一份发布规则文件，声明本次发布要包含或排除哪些属性值。发布时由 DITA-OT 读取 ditaval，过滤内容。</dd>
+        </dlentry>
+      </dl>
+    </section>
+
+    <section>
+      <title>使用示例</title>
+      <p>在内容上标记属性，例如把一段内部说明标记为 audience="internal"：</p>
+      <codeblock>&lt;p audience="internal"&gt;此版本为内部评审稿，包含未公开的
+  评测指标和实验数据，请勿外发。&lt;/p&gt;</codeblock>
+      <p>然后在 ditaval 文件里声明本次发布的过滤规则：</p>
+      <codeblock>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;val&gt;
+  &lt;prop action="exclude" att="audience" val="internal"/&gt;
+  &lt;prop action="include" att="audience" val="external"/&gt;
+&lt;/val&gt;</codeblock>
+      <p>发布时 DITA-OT 读取这份 ditaval，凡是被标记为 internal 的段落会被自动排除，从而生成一份"客户版"文档。</p>
+    </section>
+
+    <section>
+      <title>适用场景</title>
+      <p>条件化发布适合以下情况：</p>
+      <ul>
+        <li>同一产品的文档需要区分内部版与客户版。</li>
+        <li>多个产品型号共用大部分内容，只有局部参数或型号名不同。</li>
+        <li>同一文档需要为不同读者角色（管理员、运维、终端用户）输出不同版本。</li>
+        <li>面向不同地区市场，需要按合规要求包含或排除特定章节。</li>
+      </ul>
+      <note>条件化发布不能滥用。过度使用会让内容难以维护，并增加发布前的检查成本。建议只对真正需要差异化的部分做标记。</note>
+    </section>
+
+    <section>
+      <title>与内容复用的关系</title>
+      <p>条件化发布与 conref、keyref 是互补关系：</p>
+      <simpletable relcolwidth="2* 4*">
+        <sthead>
+          <stentry>机制</stentry>
+          <stentry>解决的问题</stentry>
+        </sthead>
+        <strow>
+          <stentry>conref</stentry>
+          <stentry>完全相同的内容片段复用</stentry>
+        </strow>
+        <strow>
+          <stentry>keyref</stentry>
+          <stentry>变量值（产品名、版本号）统一管理</stentry>
+        </strow>
+        <strow>
+          <stentry>ditaval</stentry>
+          <stentry>同一套内容按条件输出不同版本</stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </conbody>
+</concept>

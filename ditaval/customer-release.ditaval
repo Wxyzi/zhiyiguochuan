@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ditaval: 客户版发布规则
+  用途：发布面向外部客户的文档版本，自动排除内部评审/实验数据等内容。
+  使用方法：在 DITA-OT 发布命令中加 -Dargs.filter=ditaval/customer-release.ditaval
+-->
+<val>
+  <!-- 排除内部受众内容 -->
+  <prop action="exclude" att="audience" val="internal"/>
+
+  <!-- 包含外部客户内容 -->
+  <prop action="include" att="audience" val="external"/>
+
+  <!-- 未标记 audience 的内容默认包含 -->
+  <prop action="include" att="audience"/>
+</val>

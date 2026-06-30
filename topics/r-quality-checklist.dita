@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="r-quality-checklist" xml:lang="zh-CN">
+  <title>文档发布前质量检查清单</title>
+  <shortdesc>本清单面向文档维护者，用于确认内容、结构、链接、术语和发布输出达到交付要求。</shortdesc>
+  <refbody>
+    <section>
+      <title>新闻英译质量检查</title>
+      <ul>
+        <li>检查译文是否保留原文中的时间、数字、比例、排名和限定语。</li>
+        <li>检查机构名、政策名和项目名是否存在未经确认的官方译名。</li>
+        <li>检查标题是否存在夸大、绝对化或过度营销表达。</li>
+        <li>检查预测、计划和潜在能力是否被误写为已经发生的事实。</li>
+        <li>检查不确定术语是否已在人工复核提示中标记。</li>
+      </ul>
+      <p>限定语和标题规则应满足以下要求：</p>
+      <p conref="common-reuse.dita#common-reuse/hedge-preservation-rule"/>
+      <p conref="common-reuse.dita#common-reuse/headline-restraint-rule"/>
+    </section>
+    <section>
+      <title>DITA 结构检查</title>
+      <simpletable>
+        <sthead>
+          <stentry>检查项</stentry>
+          <stentry>通过标准</stentry>
+        </sthead>
+        <strow>
+          <stentry>topic 类型</stentry>
+          <stentry>概念说明使用 concept，操作流程使用 task，参数和清单使用 reference。</stentry>
+        </strow>
+        <strow>
+          <stentry>标题和 shortdesc</stentry>
+          <stentry>每个 topic 都有清晰标题和可独立理解的 shortdesc。</stentry>
+        </strow>
+        <strow>
+          <stentry>DITA map</stentry>
+          <stentry>topicref 顺序符合用户阅读路径，章节分组清晰。</stentry>
+        </strow>
+        <strow>
+          <stentry>交叉引用</stentry>
+          <stentry>xref 指向存在的 topic，链接文本不产生歧义。</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>内容质量检查</title>
+      <simpletable>
+        <sthead>
+          <stentry>检查项</stentry>
+          <stentry>通过标准</stentry>
+        </sthead>
+        <strow>
+          <stentry>准确性</stentry>
+          <stentry>功能、格式、配置项和错误处理说明与智能体实际能力一致。</stentry>
+        </strow>
+        <strow>
+          <stentry>完整性</stentry>
+          <stentry>用户能从快速开始走到配置、运行、审校和导出。</stentry>
+        </strow>
+        <strow>
+          <stentry>一致性</stentry>
+          <stentry>术语、按钮名称、配置项名称和导出格式写法统一。</stentry>
+        </strow>
+        <strow>
+          <stentry>可操作性</stentry>
+          <stentry>task 步骤包含前提、动作、结果和必要的后续步骤。</stentry>
+        </strow>
+        <strow>
+          <stentry>风险提示</stentry>
+          <stentry>对事实核查、版权、敏感表达和人工复核边界有明确说明。</stentry>
+        </strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>Oxygen 发布检查</title>
+      <ul>
+        <li>在 DITA Maps Manager 中运行 Validate and Check for Completeness。</li>
+        <li>检查是否存在无效 XML、断链、重复 ID、缺失图片和未解析的引用。</li>
+        <li>分别预览 PDF 和 WebHelp 输出，确认标题层级、表格、代码块和列表显示正常。</li>
+        <li>发布后保留 ditamap、topic、输出文件和版本说明，便于回溯。</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>
