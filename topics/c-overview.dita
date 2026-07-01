@@ -21,7 +21,7 @@
       <title>技术架构</title>
       <fig>
         <title>智译国传智能体架构</title>
-        <image href="images/agent-architecture.svg" placement="break">
+        <image href="images/agent-architecture-pdf.png" placement="break" width="160mm">
           <alt>智译国传智能体由扣子平台入口、三层知识库和六步工作流模块组成。</alt>
         </image>
       </fig>

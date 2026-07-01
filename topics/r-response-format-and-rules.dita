@@ -8,7 +8,7 @@
       <title>默认输出结构</title>
       <fig>
         <title>五部分输出结构</title>
-        <image href="images/output-five-parts.svg" placement="break">
+        <image href="images/output-five-parts-pdf.png" placement="break" width="160mm">
           <alt>智能体输出 Final Translation、Headline Options、Term Table、Fact Checklist 和 Human Review Notes 五部分结果。</alt>
         </image>
       </fig>

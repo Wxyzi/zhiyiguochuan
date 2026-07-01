@@ -9,7 +9,7 @@
       <title>六步工作流</title>
       <fig>
         <title>六步翻译工作流</title>
-        <image href="images/workflow-six-steps.svg" placement="break">
+        <image href="images/workflow-six-steps-pdf.png" placement="break" width="160mm">
           <alt>智能体依次完成输入诊断、事实抽取、术语规范、译文生成、质量检查和最终整合六个步骤。</alt>
         </image>
       </fig>
