@@ -25,5 +25,13 @@
         <p id="headline-restraint-rule">
             标题应清晰、自然、可核查，避免使用 validate、prove、drive、transform 等强化因果或结果的动词，避免夸大和营销式表达。正式新闻标题中不使用 ~20% 这类符号化写法，应写作 about 20 percent、nearly 或 more than。
         </p>
+
+        <p id="output-prompt-full">
+            正式稿件场景：请输出完整五部分结果，包括 Final Translation（译文）、Headline Options（标题备选）、Term Table（术语表）、Fact Checklist（事实核对表）和 Human Review Notes（人工复核提示），便于译后编辑逐项核查。
+        </p>
+
+        <p id="output-prompt-brief">
+            快速预览场景：请只输出 Final Translation（译文）和三个 Headline Options（标题备选），省略术语表和事实核对表，便于快速浏览效果。
+        </p>
     </body>
 </topic>

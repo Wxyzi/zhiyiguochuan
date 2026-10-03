@@ -81,5 +81,14 @@
   "preserve_hedges": true
 }</codeblock>
     </section>
+    <section>
+      <title>输出模式说明（基于 conkeyref 的内容复用）</title>
+      <p>output_mode 有两种取值，对应不同的输出提示。下面通过基于 key 的内容引用（conkeyref）展示两种模式的差异：切换模式时，只需修改 keys.ditamap 中 output-prompt 这个 key 的指向，正文无需改动。</p>
+      <p><b>正式稿件模式（full）：</b></p>
+      <p conkeyref="output-prompt/output-prompt-full"/>
+      <p><b>快速预览模式（translation_only）：</b></p>
+      <p conkeyref="output-prompt/output-prompt-brief"/>
+      <note>上两段内容通过 conkeyref 引用自 common-reuse.dita，引用处只写了 key 名（output-prompt），未写死文件路径。若将来把复用源迁移到其他文件，只需在 keys.ditamap 修改 key 的 href 指向，正文引用自动跟随。</note>
+    </section>
   </refbody>
 </reference>

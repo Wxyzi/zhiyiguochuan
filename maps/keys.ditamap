@@ -89,4 +89,12 @@
       </keywords>
     </topicmeta>
   </keydef>
+
+  <!--
+    基于 key 的内容引用（conkeyref）示例。
+    output-prompt 这个 key 默认指向 common-reuse.dita 文件，
+    通过 conkeyref="output-prompt/output-prompt-full" 引用其中的片段。
+    切换场景时，只需把 href 改为指向其他复用文件，正文引用处无需改动。
+  -->
+  <keydef keys="output-prompt" href="../topics/common-reuse.dita"/>
 </map>
