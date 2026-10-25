@@ -4,20 +4,7 @@
  * Page: A4. Body font: Microsoft YaHei (approximates HYQiHei).
  */
 
-@font-face {
-  font-family: "BodyCN";
-  font-style: normal;
-  font-weight: 400;
-  src: url("file:/C:/Windows/Fonts/msyh.ttc") format("truetype-collection");
-}
-
-@font-face {
-  font-family: "BodyCN";
-  font-style: normal;
-  font-weight: 700;
-  src: url("file:/C:/Windows/Fonts/msyhbd.ttc") format("truetype-collection");
-}
-
+/* Resolve installed TTC faces by family, including their bold variants. */
 @font-face {
   font-family: "SimHeiFallback";
   font-style: normal;
@@ -28,7 +15,7 @@
 @page {
   size: A4;
   margin: 22mm 20mm 20mm 20mm;
-  font-family: "BodyCN", "SimHeiFallback", Arial, Sans-Serif;
+  font-family: "Microsoft YaHei", "SimHeiFallback", Arial, Sans-Serif;
   font-size: 8pt;
 
   @top-left {
@@ -221,7 +208,7 @@ note,
 figcaption,
 caption,
 *[class] {
-  font-family: "BodyCN", "SimHeiFallback", Arial, Sans-Serif !important;
+  font-family: "Microsoft YaHei", "SimHeiFallback", Arial, Sans-Serif !important;
   color: #151515;
 }
 
@@ -617,7 +604,7 @@ samp,
 codeph,
 *[class~="pr-d/codeblock"],
 *[class~="pr-d/codeph"] {
-  font-family: "Consolas", "Courier New", "BodyCN", Monospace !important;
+  font-family: "Consolas", "Courier New", "Microsoft YaHei", Monospace !important;
   font-size: 8.5pt;
   line-height: 1.4;
   background-color: #F5F5F5;
