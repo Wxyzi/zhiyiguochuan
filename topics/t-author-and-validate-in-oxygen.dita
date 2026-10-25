@@ -6,20 +6,20 @@
   <taskbody>
     <prereq>
       <ul>
-        <li>你已经安装 Oxygen XML Editor 28.1。</li>
+        <li>你已经安装支持 DITA 的 Oxygen XML Editor。本教程使用 28.1 名称；其他版本的菜单位置可能不同。</li>
         <li>你已经打开本项目文件夹，并能访问 <filepath>maps/zhiya-guochuan-agent.ditamap</filepath>。</li>
         <li>如果使用中文界面，请将 English UI 名称对应到中文菜单，例如 Validate and Check for Completeness 对应“验证并检查完整性”。</li>
       </ul>
     </prereq>
     <context>
-      <p>本主题不是智能体终端用户操作说明，而是面向维护本文档的资料开发人员。</p>
+      <p>本主题面向文档维护者。尚未确定要写哪些内容时，先参考<xref href="t-write-agent-documentation.dita">从零为自己的智能体编写技术文档</xref>。</p>
       <p>推荐从 DITA map 入口管理文档，而不是单独打开零散 topic。这样可以在 Oxygen 中检查 topicref、xref、图片、key 和发布场景是否完整。</p>
     </context>
     <steps>
       <step>
-        <cmd>在 Oxygen XML Editor 28.1 中切换到 DITA 相关工作区。</cmd>
+        <cmd>在 Oxygen 中打开主地图文件。</cmd>
         <info>
-          <p>英文界面通常使用 <uicontrol>Window</uicontrol> &gt; <uicontrol>Open Perspective</uicontrol> &gt; <uicontrol>DITA</uicontrol>。中文界面可在“窗口”菜单中查找对应视图。</p>
+          <p>通过打开文件功能选择 <filepath>maps/zhiya-guochuan-agent.ditamap</filepath>，选择在 <uicontrol>DITA Maps Manager</uicontrol> 中打开。独立版与 Eclipse 插件版的工作区菜单不同，以当前安装版本显示为准。</p>
         </info>
       </step>
       <step>
@@ -32,6 +32,7 @@
         <cmd>在 DITA Maps Manager 中双击 topic 进行编辑。</cmd>
         <info>
           <p>编写 task topic 时，优先使用 <xmlelement>prereq</xmlelement>、<xmlelement>steps</xmlelement>、<xmlelement>step</xmlelement>、<xmlelement>cmd</xmlelement>、<xmlelement>result</xmlelement> 和 <xmlelement>postreq</xmlelement> 组织内容。</p>
+          <p>新增主题时通过新建文件功能选择 DITA Concept、Task 或 Reference 模板，保存到 <filepath>topics/</filepath>，再在地图中加入主题引用。主题内部的 id 应唯一，文件间 href 使用相对路径。</p>
         </info>
       </step>
       <step>
@@ -55,12 +56,13 @@
       <step>
         <cmd>配置并运行发布场景。</cmd>
         <info>
-          <p>常见发布场景包括 PDF 和 WebHelp Responsive。发布前请参考<xref href="r-quality-checklist.dita">发布前质量检查清单</xref>。</p>
+          <p>常见发布场景包括 HTML5、PDF 和 WebHelp Responsive，具体转换能力取决于安装组件。对外发布时使用 <filepath>ditaval/customer-release.ditaval</filepath> 过滤规则。发布前请参考<xref href="r-quality-checklist.dita">发布前质量检查清单</xref>。</p>
         </info>
       </step>
     </steps>
     <result>
       <p>文档通过完整性检查后，可以发布为可阅读、可审校、可归档的技术文档输出。</p>
     </result>
+    <postreq><p>本地保存和发布完成后，按<xref href="t-sync-github-pages.dita">同步到 GitHub 和 Pages</xref>上传版本并更新在线文档。更多编辑操作见<xref href="https://www.oxygenxml.com/doc/versions/28.1/ug-editor/topics/eppo-first-dita-topic.html" scope="external" format="html">Oxygen 28.1 官方 DITA 入门</xref>。</p></postreq>
   </taskbody>
 </task>

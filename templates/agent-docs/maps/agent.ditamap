@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="agent-docs" xml:lang="zh-CN">
+  <title>[填写智能体名称]技术文档</title>
+  <topicmeta><shortdesc>起步模板：复制整个 agent-docs 文件夹，填写四篇主题后验证本地图。</shortdesc></topicmeta>
+  <topicref href="../topics/c-overview.dita" type="concept"/>
+  <topicref href="../topics/t-quick-start.dita" type="task"/>
+  <topicref href="../topics/r-input-output.dita" type="reference"/>
+  <topicref href="../topics/r-troubleshooting.dita" type="reference"/>
+</map>

@@ -54,6 +54,10 @@
           <stentry>功能、格式、配置项和错误处理说明与智能体实际能力一致。</stentry>
         </strow>
         <strow>
+          <stentry>依据与版本</stentry>
+          <stentry>标明模型、提示词、知识文件和验证日期；已验证功能、待验证目标、教学示例和实验结论有明确区分。</stentry>
+        </strow>
+        <strow>
           <stentry>完整性</stentry>
           <stentry>用户能从快速开始走到配置、运行、审校和导出。</stentry>
         </strow>
@@ -77,7 +81,9 @@
         <li>在 DITA Maps Manager 中运行 Validate and Check for Completeness。</li>
         <li>检查是否存在无效 XML、断链、重复 ID、缺失图片和未解析的引用。</li>
         <li>分别预览 PDF 和 WebHelp 输出，确认标题层级、表格、代码块和列表显示正常。</li>
-        <li>发布后保留 ditamap、topic、输出文件和版本说明，便于回溯。</li>
+        <li>对外构建应用 customer-release.ditaval，检查内部受众内容已从生成结果中排除。</li>
+        <li>核对新提交对应的 Actions 构建与部署成功，抽查 Pages 章节和下载 PDF。</li>
+        <li>通过 Git 保存源文件版本；本地构建结果不入库，需长期归档的发布产物另行保留。</li>
       </ul>
     </section>
   </refbody>

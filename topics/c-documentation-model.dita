@@ -5,6 +5,7 @@
   <shortdesc>智译国传智能体技术文档采用基于主题的 DITA 写作模型，便于复用、审校、发布和后续版本维护。</shortdesc>
   <conbody>
     <p>本文档使用 DITA topic 管理内容单元，使用 DITA map 组织阅读顺序和发布结构。每个 topic 只解决一个明确问题，避免把概念解释、操作步骤和参数参考混写在同一篇文档中。</p>
+    <p>首次为自己的智能体写文档时，先完成<xref href="t-write-agent-documentation.dita">写作步骤</xref>，再按<xref href="r-agent-documentation-template.dita">结构与填写模板</xref>检查内容。目录 <filepath>templates/agent-docs/</filepath> 提供可独立复制的最小文档集。</p>
     <section>
       <title>内容类型划分</title>
       <simpletable>
@@ -15,12 +16,12 @@
         </sthead>
         <strow>
           <stentry>concept</stentry>
-          <stentry>说明”是什么”和”为什么”，帮助用户理解系统、场景和工作机制。</stentry>
+          <stentry>说明“是什么”和“为什么”，帮助用户理解系统、场景和工作机制。</stentry>
           <stentry>概述、受众和使用场景、智能体定位与工作原则、工作流模型、DITA 文档开发模型。</stentry>
         </strow>
         <strow>
           <stentry>task</stentry>
-          <stentry>说明”怎么做”，按照用户目标组织步骤。</stentry>
+          <stentry>说明“怎么做”，按照用户目标组织步骤。</stentry>
           <stentry>快速开始、配置翻译任务参数、运行翻译工作流、审校和导出结果。</stentry>
         </strow>
         <strow>

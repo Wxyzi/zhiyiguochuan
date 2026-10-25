@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="agent-troubleshooting" xml:lang="zh-CN">
+  <title>常见问题和处理方法</title>
+  <shortdesc>[填写本主题覆盖的问题范围以及适用版本。]</shortdesc>
+  <refbody>
+    <section>
+      <title>问题排查</title>
+      <simpletable>
+        <sthead><stentry>问题现象</stentry><stentry>可能原因</stentry><stentry>处理方法</stentry><stentry>恢复检查</stentry></sthead>
+        <strow><stentry>[填写可观察现象]</stentry><stentry>[填写可核对原因]</stentry><stentry>[填写可执行动作]</stentry><stentry>[填写恢复后的预期结果]</stentry></strow>
+      </simpletable>
+      <p>[填写需要维护者协助时，应提供的输入、配置版本、输出或错误信息。]</p>
+    </section>
+  </refbody>
+</reference>

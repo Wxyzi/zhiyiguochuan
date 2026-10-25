@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="agent-overview" xml:lang="zh-CN">
+  <title>[填写智能体名称]概述</title>
+  <shortdesc>[填写：面向谁，通过什么输入，完成什么任务，输出什么成果。]</shortdesc>
+  <conbody>
+    <section><title>适用场景与入口</title><p>[填写使用场景、运行入口和访问权限。]</p></section>
+    <section>
+      <title>能力与验证状态</title>
+      <simpletable>
+        <sthead><stentry>能力</stentry><stentry>状态</stentry><stentry>验证依据和日期</stentry></sthead>
+        <strow><stentry>[填写能力]</stentry><stentry>[填写已验证或待验证]</stentry><stentry>[填写配置或运行记录位置、日期]</stentry></strow>
+      </simpletable>
+    </section>
+    <section><title>使用限制</title><p>[填写输入范围、人工确认要求，以及尚不支持的任务。]</p></section>
+    <section><title>适用版本</title><p>[填写智能体版本、模型、提示词和知识库版本、文档更新日期。]</p></section>
+  </conbody>
+</concept>

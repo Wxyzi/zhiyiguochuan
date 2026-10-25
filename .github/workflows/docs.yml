@@ -18,6 +18,8 @@ on:
     paths:
       - 'maps/**'
       - 'topics/**'
+      - 'templates/**'
+      - 'scripts/**'
       - 'styles/**'
       - 'ditaval/**'
       - 'README.md'
@@ -27,6 +29,8 @@ on:
     paths:
       - 'maps/**'
       - 'topics/**'
+      - 'templates/**'
+      - 'scripts/**'
       - 'styles/**'
       - 'ditaval/**'
       - 'README.md'
@@ -71,7 +75,7 @@ jobs:
 
       - name: Install DITA-OT
         run: |
-          curl -L -o dita-ot.zip "https://github.com/dita-ot/dita-ot/releases/download/${DITA_OT_VERSION}/dita-ot-${DITA_OT_VERSION}.zip"
+          curl --fail --retry 3 -L -o dita-ot.zip "https://github.com/dita-ot/dita-ot/releases/download/${DITA_OT_VERSION}/dita-ot-${DITA_OT_VERSION}.zip"
           unzip -q dita-ot.zip
           cp styles/font-mappings-zh-cn.xml "dita-ot-${DITA_OT_VERSION}/plugins/org.dita.pdf2/cfg/fo/font-mappings.xml"
           echo "$PWD/dita-ot-${DITA_OT_VERSION}/bin" >> "$GITHUB_PATH"
@@ -84,7 +88,7 @@ jobs:
           import xml.etree.ElementTree as ET
 
           failed = False
-          for pattern in ("maps/**/*.ditamap", "topics/**/*.dita"):
+          for pattern in ("maps/**/*.ditamap", "topics/**/*.dita", "templates/**/*.ditamap", "templates/**/*.dita"):
               for file in Path(".").glob(pattern):
                   try:
                       ET.parse(file)
@@ -95,34 +99,23 @@ jobs:
               sys.exit(1)
           PY
 
+      - name: Build starter template
+        run: |
+          dita \
+            -i templates/agent-docs/maps/agent.ditamap \
+            -f html5 \
+            -o build/starter-template \
+            --outer.control=quiet
+
       - name: Build HTML5 site
         run: |
           dita \
             -i "$MAIN_MAP" \
             -f html5 \
             -o site \
+            --filter=ditaval/customer-release.ditaval \
             --outer.control=quiet
-          python - <<'PY'
-          from pathlib import Path
-
-          # The source map is in maps/ and references topics as ../topics/...
-          # DITA-OT preserves those hrefs in the root index.html. On a GitHub
-          # Pages project site (/git/), ../topics/... resolves outside the
-          # repository path. Rewrite only the root index links so the table of
-          # contents opens /git/topics/... correctly.
-          index = Path("site/index.html")
-          text = index.read_text(encoding="utf-8")
-          text = text.replace('href="../topics/', 'href="topics/')
-          text = text.replace('src="../topics/', 'src="topics/')
-          pdf_link = '<p class="shortdesc"><a href="pdf/zhiya-guochuan-agent.pdf">查看 PDF 版本</a></p>'
-          if 'pdf/zhiya-guochuan-agent.pdf' not in text:
-              text = text.replace('</h1>', f'</h1>\n      {pdf_link}', 1)
-          index.write_text(text, encoding="utf-8")
-          PY
-          if grep -q 'href="../topics/' site/index.html; then
-            echo "::error::Root index still contains links that escape the GitHub Pages project path."
-            exit 1
-          fi
+          python scripts/prepare_site.py site
 
       - name: Build PDF
         run: |
@@ -132,6 +125,7 @@ jobs:
             -o pdf \
             --args.output.base=zhiya-guochuan-agent \
             --args.fo.userconfig="$PWD/styles/fop-zh-cn.xconf" \
+            --filter=ditaval/customer-release.ditaval \
             --outer.control=quiet
           mkdir -p site/pdf
           pdf_file="$(find pdf -type f -name '*.pdf' | head -n 1)"
@@ -152,6 +146,7 @@ jobs:
             exit 1
           fi
           touch site/.nojekyll
+          python scripts/prepare_site.py site --check
 
       - name: Upload site build artifact
         uses: actions/upload-artifact@v4
@@ -161,14 +156,14 @@ jobs:
           retention-days: 30
 
       - name: Upload GitHub Pages artifact
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
   deploy:
     name: Deploy to GitHub Pages
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     needs: build
     runs-on: ubuntu-latest
 

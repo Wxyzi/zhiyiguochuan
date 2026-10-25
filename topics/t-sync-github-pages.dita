@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="t-sync-github-pages" xml:lang="zh-CN">
+  <title>将 Oxygen 修改同步到 GitHub 和 Pages</title>
+  <shortdesc>保存并验证本地文档后，使用 Git 提交和推送，再检查自动构建、网页部署和线上 PDF。</shortdesc>
+  <taskbody>
+    <prereq>
+      <ul>
+        <li>你在本地 Git 仓库中编辑文档，已经安装 Git，并拥有远程仓库的推送权限。</li>
+        <li>本项目已配置 <filepath>.github/workflows/docs.yml</filepath>，Pages 来源为 GitHub Actions。新建仓库需要自行配置同等发布流程。</li>
+        <li>已经保存 Oxygen 中的修改，并完成<xref href="t-author-and-validate-in-oxygen.dita">地图验证</xref>。</li>
+      </ul>
+    </prereq>
+    <context><p>本地保存更新电脑文件，commit 记录本地版本，push 上传提交，GitHub Actions 再把对应版本构建并部署到 Pages。只有部署成功后，在线读者才会看到新版本。</p></context>
+    <steps>
+      <step>
+        <cmd>在 PowerShell 中进入本地仓库并查看修改。</cmd>
+        <info>
+          <codeblock>cd "C:\Users\Administrator\Desktop\codex project\zhiya-guochuan-agent-doc"
+git status
+git diff</codeblock>
+          <p>使用你电脑上的实际路径。确认新增主题已加入地图，新增图片和引用资源也在仓库中。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>把本次需要上传的文件加入暂存区。</cmd>
+        <info>
+          <codeblock>git add -- maps topics
+git diff --cached</codeblock>
+          <p>上例适用于地图和主题修改。还改了 README、样式或模板时，增加对应路径，例如 <codeph>git add -- README.md styles templates</codeph>。检查暂存区只包含本次需要发布的内容。</p>
+          <p><filepath>build/</filepath> 和生成的 PDF 由工作流重新生成，不需要上传本地副本。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>提交并推送到主分支。</cmd>
+        <info>
+          <codeblock>git commit -m "docs: update agent documentation"
+git push origin main</codeblock>
+          <p>提交说明应概括实际修改。若项目使用其他分支名，按自己的仓库调整。若远程已更新导致拒绝推送，先运行 <codeph>git fetch origin</codeph> 和 <codeph>git status</codeph> 查看差异，保留本地修改并处理冲突后再推送。</p>
+        </info>
+        <stepresult><p>GitHub 的对应分支出现本次提交。推送成功尚不代表网页已更新。</p></stepresult>
+      </step>
+      <step>
+        <cmd>打开 Actions 中对应本次提交的任务。</cmd>
+        <info>
+          <p>访问<xref href="https://github.com/Wxyzi/zhiyiguochuan/actions" scope="external" format="html">本项目 Actions</xref>，核对提交号以及 Validate and build、Deploy to GitHub Pages 两个任务。只有两者成功才表示文档已构建并发布。</p>
+          <p>本项目在相关内容推送到主分支时自动发布；也支持从主分支手动运行工作流。拉取请求只构建预览产物，不更新正式网站。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>在 Pages 页面检查修改位置和 PDF。</cmd>
+        <info><p>打开<xref href="https://wxyzi.github.io/zhiyiguochuan/" scope="external" format="html">在线技术文档</xref>，找到本次修改的章节，并打开首页的 PDF 链接确认内容。若仍显示旧页面，按 <uicontrol>Ctrl + F5</uicontrol> 强制刷新。</p></info>
+      </step>
+      <step>
+        <cmd>根据失败阶段处理未更新的问题。</cmd>
+        <info>
+          <simpletable>
+            <sthead><stentry>现象</stentry><stentry>检查与处理</stentry></sthead>
+            <strow><stentry>GitHub 没有新提交</stentry><stentry>检查是否已保存、加入暂存区、提交并推送；核对远程地址和分支。</stentry></strow>
+            <strow><stentry>没有触发工作流</stentry><stentry>检查分支和路径条件。本项目监测 maps、topics、templates、scripts、styles、ditaval、README 和工作流。</stentry></strow>
+            <strow><stentry>构建失败</stentry><stentry>打开失败步骤日志，检查 XML、引用、图片或 PDF 字体错误；修复源文件后重新提交。</stentry></strow>
+            <strow><stentry>构建通过但部署失败</stentry><stentry>检查 Pages 是否启用、来源是否为 GitHub Actions，以及部署权限、环境限制和日志中的具体错误。</stentry></strow>
+            <strow><stentry>部署通过但看见旧内容</stentry><stentry>核对成功任务的提交号、网址与实际修改章节，并刷新缓存。</stentry></strow>
+          </simpletable>
+        </info>
+      </step>
+    </steps>
+    <result><p>远程仓库保存了本次修改，Pages 展示同一版本的文档，线上 PDF 可供下载和打印。</p></result>
+  </taskbody>
+</task>

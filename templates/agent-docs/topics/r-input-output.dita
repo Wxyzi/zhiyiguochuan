@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="agent-input-output" xml:lang="zh-CN">
+  <title>输入和输出格式</title>
+  <shortdesc>[填写支持的输入形式、输出成果和适用版本。]</shortdesc>
+  <refbody>
+    <section>
+      <title>输入要求</title>
+      <simpletable>
+        <sthead><stentry>项目</stentry><stentry>要求</stentry></sthead>
+        <strow><stentry>支持形式</stentry><stentry>[填写文本、文件类型等已确认支持项。]</stentry></strow>
+        <strow><stentry>必要信息</stentry><stentry>[填写必填信息与缺失时的处理。]</stentry></strow>
+        <strow><stentry>限制</stentry><stentry>[填写已核实长度或格式限制；不明确时标为待确认。]</stentry></strow>
+      </simpletable>
+    </section>
+    <section><title>输出结构与示例</title><p>[填写输出部分、各部分含义、保存方式。]</p><codeblock>[填写与运行记录相对应的示例输出；教学内容需标为教学示例。]</codeblock></section>
+  </refbody>
+</reference>

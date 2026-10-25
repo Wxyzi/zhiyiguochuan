@@ -31,7 +31,7 @@
         </p>
 
         <p id="output-prompt-brief">
-            快速预览场景：请只输出 Final Translation（译文）和三个 Headline Options（标题备选），省略术语表和事实核对表，便于快速浏览效果。
+            仅译文场景：请只输出英文译文，省略标题备选、术语表、事实核对表和人工复核提示，便于复制正文。
         </p>
     </body>
 </topic>

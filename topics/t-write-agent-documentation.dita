@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="t-write-agent-documentation" xml:lang="zh-CN">
+  <title>从零为自己的智能体编写技术文档</title>
+  <shortdesc>以智译国传为例，从整理实际功能、设计章节、编写操作步骤到验证示例，完成一份新用户可以照着使用的智能体文档。</shortdesc>
+  <taskbody>
+    <prereq>
+      <p>准备智能体的运行入口、可查看的配置和至少一次完整输入输出。若尚未搭建完成，先把相关功能标为设计目标或待验证；不需要等待全部功能完成才开始写文档。</p>
+    </prereq>
+    <context>
+      <p>文档首先回答用户要完成什么、需要准备什么、怎样操作和如何判断结果。提示词记录模型应遵循的规则，技术文档还需要说明用户操作、配置依据、已验证行为和失败处理。</p>
+      <p>先写“概述、快速开始、输入输出、常见问题”四篇即可起步。可以复制 <filepath>templates/agent-docs/</filepath>，在自己的项目中逐项填写；章节字段见<xref href="r-agent-documentation-template.dita">结构与填写模板</xref>。</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>用一句话定义智能体的目标用户和任务。</cmd>
+        <info>
+          <p>推荐句式：“[智能体名称]面向[用户]，通过[输入]帮助完成[任务]，输出[成果]。”例如：“智译国传面向中文科技新闻译者，接收中文新闻，输出英文译文及审校辅助信息。”</p>
+          <p>接着列出适用场景、使用入口和明确限制，例如正式发布前仍需人工复核。</p>
+        </info>
+        <stepresult><p>得到概述初稿，读者能够判断这个智能体是否适合自己的任务。</p></stepresult>
+      </step>
+      <step>
+        <cmd>为拟写的功能收集可核对的依据。</cmd>
+        <info>
+          <p>平台设置用于核对模型、参数、工具和知识库；运行记录用于核对输入、输出和实际操作结果。分别记录功能状态、依据位置和验证日期。</p>
+          <p>“提示词要求输出术语表”是规则描述；“本次样例输出了术语表”是观察结果。写到知识库命中、联网核查、独立工作流节点时，应有对应运行记录。</p>
+          <p>模型参数、提示词和知识库应各记版本。将语料整理为知识文件后挂载到智能体，不应描述为已经完成模型参数训练。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>按读者的问题拆分章节，并建立地图顺序。</cmd>
+        <info>
+          <simpletable>
+            <sthead><stentry>读者的问题</stentry><stentry>主题类型</stentry><stentry>建议标题</stentry></sthead>
+            <strow><stentry>是什么，适合谁？</stentry><stentry>concept</stentry><stentry>智能体概述</stentry></strow>
+            <strow><stentry>如何完成第一次任务？</stentry><stentry>task</stentry><stentry>快速开始</stentry></strow>
+            <strow><stentry>接受什么，返回什么？</stentry><stentry>reference</stentry><stentry>输入和输出格式</stentry></strow>
+            <strow><stentry>出现问题怎么办？</stentry><stentry>reference</stentry><stentry>常见问题和处理方法</stentry></strow>
+          </simpletable>
+          <p>在 Oxygen 中新建主题、保存到 <filepath>topics/</filepath>，再把主题引用加入地图。地图中的引用决定阅读顺序；只保存主题文件不会自动把它放入发布目录。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>先写通一次完整操作，再补背景说明。</cmd>
+        <info>
+          <p>任务文档包含前提、步骤、预期结果和后续操作。每一步用一个主要动作开头，如“粘贴源文本”“指定目标读者”“检查译文中的数字”。按钮名称以实际界面为准。</p>
+          <p>示例任务可按“准备中文新闻、提交翻译要求、查看五部分结果、核对数字和限定语、保存审校稿”组织。将耗时、权限和文件支持范围写成已经核实的信息。</p>
+          <p>在 DITA 中用 <xmlelement>prereq</xmlelement> 写前提、<xmlelement>cmd</xmlelement> 写动作、<xmlelement>info</xmlelement> 写补充说明、<xmlelement>stepresult</xmlelement> 写该步结果。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>补充输入输出、配置和知识来源参考。</cmd>
+        <info>
+          <p>逐项记录可接受的输入、必要字段、长度或格式限制，以及输出包含的部分。对话中的任务约定与平台原生参数应分开列示；不要把说明性的 JSON 示例写成已经实现的 API。</p>
+          <p>知识库说明应包含文件名、版本、来源、适用领域、更新方式和检索条件。基于语料观察归纳的模式与编写者制定的一般规则分别标记，保留可核查的来源依据。</p>
+          <p>工作机制可以按逻辑阶段解释；只有平台实际配置为独立节点时，才使用“独立节点”或“独立模块”等实现描述。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>加入可复现示例、检查点和常见问题。</cmd>
+        <info>
+          <p>以下为自拟教学输入，不是新闻事实或实验样本：</p>
+          <codeblock>请将下列内容译为英文科技新闻，保留消息来源、限定语和测试阶段。
+某研究团队表示，一款电池样机的测试续航时间提高约20%，目前仍处于实验室测试阶段。</codeblock>
+          <p>检查实际输出是否保留“团队表示”“约20%”“实验室测试阶段”。记录运行日期、模型、提示词版本、知识库版本和实际输出位置；模型生成结果可能随运行变化，示例不应承诺逐字相同。</p>
+          <p>把问题写为“现象、可能原因、处理方法、恢复后的检查结果”，例如缺少术语表时确认是否选择了仅译文模式。未测得的数据和效果不填入评测结论。</p>
+        </info>
+      </step>
+      <step>
+        <cmd>请未参与搭建的人按文档完成一次任务。</cmd>
+        <info><p>观察对方是否能找到入口、准备输入、理解结果并处理一个常见问题。记录需要口头补充的地方，将其补进文档；再核对参数表与实际平台设置是否一致。</p></info>
+        <stepresult><p>文档不再依赖搭建者在旁解释，示例与实际功能相符。</p></stepresult>
+      </step>
+      <step>
+        <cmd>验证地图并发布与智能体版本相对应的文档。</cmd>
+        <info><p>运行 Oxygen 完整性检查，预览网页、表格、代码块和 PDF，记录文档修订日期。智能体的模型、提示词、知识文件或输出要求变动时，重新检查受影响的主题。</p></info>
+      </step>
+    </steps>
+    <result><p>你获得一套包含定位、操作、格式、示例和问题处理的技术文档，并能说明各项功能依据哪个版本和运行记录。</p></result>
+    <postreq><p>编辑操作见<xref href="t-author-and-validate-in-oxygen.dita">Oxygen 编辑与验证</xref>；推送与在线发布见<xref href="t-sync-github-pages.dita">同步到 GitHub 和 Pages</xref>。</p></postreq>
+  </taskbody>
+</task>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="agent-quick-start" xml:lang="zh-CN">
+  <title>完成第一次[填写任务名称]</title>
+  <shortdesc>[填写完成本任务后，用户能够得到的可观察成果。]</shortdesc>
+  <taskbody>
+    <prereq><p>[填写访问权限、账号、需要准备的文本或文件。]</p></prereq>
+    <context><p>[填写任务适用场景和使用的智能体版本。]</p></context>
+    <steps>
+      <step><cmd>打开[填写运行入口]。</cmd><stepresult><p>[填写界面或状态。]</p></stepresult></step>
+      <step><cmd>提交[填写输入与必要要求]。</cmd><info><codeblock>[填写带来源或自拟标记的示例输入。]</codeblock></info></step>
+      <step><cmd>检查[填写结果与关键检查点]。</cmd><stepresult><p>[填写预期结构；实际示例与测试记录相对应。]</p></stepresult></step>
+      <step><cmd>保存[填写结果或审校稿]。</cmd></step>
+    </steps>
+    <result><p>[填写本任务的完成标准。]</p></result>
+    <postreq><p>输出不符时参考<xref href="r-troubleshooting.dita">常见问题</xref>；格式见<xref href="r-input-output.dita">输入输出</xref>。</p></postreq>
+  </taskbody>
+</task>

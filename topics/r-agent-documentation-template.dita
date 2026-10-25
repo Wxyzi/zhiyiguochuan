@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="r-agent-documentation-template" xml:lang="zh-CN">
+  <title>智能体文档结构与填写模板</title>
+  <shortdesc>按章节填写目标、依据、操作和限制，先完成最小文档集，再扩展知识库、模型配置、测试与维护说明。</shortdesc>
+  <refbody>
+    <section>
+      <title>章节清单</title>
+      <simpletable relcolwidth="1.5* 3* 3*">
+        <sthead><stentry>章节</stentry><stentry>需要写什么</stentry><stentry>完成标准</stentry></sthead>
+        <strow><stentry>概述（起步必需）</stentry><stentry>产品名称、目标用户、任务、入口、适用范围和限制。</stentry><stentry>读者能判断是否适用，功能状态有依据。</stentry></strow>
+        <strow><stentry>快速开始（起步必需）</stentry><stentry>准备条件、最短成功路径、示例输入、预期输出和后续审校。</stentry><stentry>新用户不经口头指导即可完成一次任务。</stentry></strow>
+        <strow><stentry>输入输出（起步必需）</stentry><stentry>支持的输入形式、必要字段、输出结构、限制及结果保存方式。</stentry><stentry>示例格式与实际运行一致。</stentry></strow>
+        <strow><stentry>常见问题（起步必需）</stentry><stentry>可观察的问题、可能原因、处理动作及处理后的检查点。</stentry><stentry>用户遇到问题后有可执行的下一步。</stentry></strow>
+        <strow><stentry>工作机制</stentry><stentry>平台、模型、工具、知识库与处理阶段；注明逻辑说明和实际节点的对应关系。</stentry><stentry>可从平台设置或日志核对实现描述。</stentry></strow>
+        <strow><stentry>配置参考</stentry><stentry>模型名称、参数、协议、上下文策略、任务约定、适用版本。</stentry><stentry>已确认值有记录；不明确的参数不猜测含义。</stentry></strow>
+        <strow><stentry>知识库说明</stentry><stentry>知识文件名、版本、来源、提炼方法、范围、更新方法和检索依据。</stentry><stentry>语料归纳与一般编辑规则有区分；命中结论可追溯。</stentry></strow>
+        <strow><stentry>测试与质量边界</stentry><stentry>测试材料、环境、检查方法、失败样例、人工复核责任。</stentry><stentry>教学示例、单次观察与正式评测结论明确标记。</stentry></strow>
+        <strow><stentry>版本维护</stentry><stentry>智能体版本、文档日期、修改内容、验证记录和发布结果。</stentry><stentry>读者能判断文档适用于哪个版本。</stentry></strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>可填写的事实与配置记录</title>
+      <p>可把下列字段作为写作底稿。方括号内容需要由你填写，不能将模板提示作为已完成配置发布。</p>
+      <codeblock>智能体名称：[填写名称]
+目标用户与任务：[填写谁在什么场景完成什么任务]
+运行入口与权限：[填写有效入口及访问前提]
+智能体版本 / 验证日期：[填写版本和日期]
+模型与协议：[按平台显示填写，不明确时标待确认]
+生成参数与上下文：[填写实际值和新会话策略]
+提示词版本：[填写文件名、版本或提交号]
+知识库：[填写每个文件的版本、来源和作用]
+工具 / 工作流：[填写已配置项及对应运行依据]
+输入与输出：[填写支持格式和实际结果结构]
+已验证能力：[填写功能及测试记录位置]
+待验证或计划能力：[单独填写，不计入已实现功能]
+人工复核与限制：[填写需人工确认的结果]
+维护方式：[填写变更记录和文档发布步骤]</codeblock>
+      <p>已有的截图可作为配置证据，但截图日期与当前运行日期不同时要重新确认。截图上的“0”等数值仅记录原值；未核实含义时，不推断为关闭推理、无限长度或没有限制。</p>
+    </section>
+    <section>
+      <title>最小 DITA 文档集</title>
+      <p>仓库中的 <filepath>templates/agent-docs/</filepath> 包含以下可独立复制的文件。保留目录相对位置，替换填写提示后再验证。</p>
+      <simpletable>
+        <sthead><stentry>文件</stentry><stentry>用途</stentry></sthead>
+        <strow><stentry>maps/agent.ditamap</stentry><stentry>文档入口，按概述、快速开始、格式、问题处理组织阅读。</stentry></strow>
+        <strow><stentry>topics/c-overview.dita</stentry><stentry>填写用户、任务、能力、状态和范围。</stentry></strow>
+        <strow><stentry>topics/t-quick-start.dita</stentry><stentry>填写前提、动作和可观察结果。</stentry></strow>
+        <strow><stentry>topics/r-input-output.dita</stentry><stentry>填写输入要求和输出样例。</stentry></strow>
+        <strow><stentry>topics/r-troubleshooting.dita</stentry><stentry>填写问题、原因、处理方法和验证结果。</stentry></strow>
+      </simpletable>
+      <p>为新智能体建立独立副本；修改本仓库的主地图会改变智译国传文档的发布内容。添加章节时，除新建主题外，还需更新你自己的地图引用。</p>
+    </section>
+    <section>
+      <title>写作示例：从规则变成可执行文档</title>
+      <simpletable relcolwidth="2* 4*">
+        <sthead><stentry>写作内容</stentry><stentry>智译国传示例</stentry></sthead>
+        <strow><stentry>定位</stentry><stentry>面向科技新闻译者，将中文新闻译为英文，并提供辅助审校信息。</stentry></strow>
+        <strow><stentry>操作</stentry><stentry>粘贴原文，说明目标读者和完整输出要求，提交后核对译文及附表。</stentry></strow>
+        <strow><stentry>规则</stentry><stentry>标题与正文均保留原文的限定语、归因和研发阶段。</stentry></strow>
+        <strow><stentry>检查点</stentry><stentry>测试包含“约20%”和“实验室测试阶段”的自拟句，检查数字限定与阶段描述是否保留。</stentry></strow>
+        <strow><stentry>能力依据</stentry><stentry>记录一次实际输入输出及模型、提示词、知识库版本；规则写入提示词本身不等于测试通过。</stentry></strow>
+        <strow><stentry>限制</stentry><stentry>事实核对表提供辅助比对；未连接权威来源时，不把该表描述为独立事实核查结果。</stentry></strow>
+      </simpletable>
+    </section>
+    <section>
+      <title>发布前自查</title>
+      <ul>
+        <li>文档中的功能、模型设置、知识文件和输出模式有对应版本。</li>
+        <li>新用户能按步骤得到所述类型的结果，问题处理步骤可执行。</li>
+        <li>示例输入有来源或自拟说明，样例输出有实际记录或教学标记。</li>
+        <li>地图、引用、图片和复用片段通过验证；HTML 和 PDF 可读。</li>
+        <li>已验证能力、设计目标和正式实验结论分别描述。</li>
+      </ul>
+      <p>操作步骤见<xref href="t-write-agent-documentation.dita">从零编写文档</xref>。本项目的完整发布检查见<xref href="r-quality-checklist.dita">质量检查清单</xref>。</p>
+    </section>
+  </refbody>
+</reference>

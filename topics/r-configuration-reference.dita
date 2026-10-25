@@ -6,7 +6,7 @@
   <refbody>
     <section>
       <title>配置项说明</title>
-      <p><keyword keyref="product-name"/>通过对话交互接收配置。以下配置项可以在提交源文本时一并说明；未说明的项使用默认值。</p>
+      <p>以下名称用于记录<keyword keyref="product-name"/>的对话任务约定，不代表平台已经实现同名的 API 参数或配置表单。实际支持情况需结合当前提示词和运行结果确认。</p>
       <simpletable relcolwidth="1.3* 4* 1.7*">
         <sthead>
           <stentry>配置项</stentry>
@@ -30,8 +30,8 @@
         </strow>
         <strow>
           <stentry>output_mode</stentry>
-          <stentry>输出模式。full=完整五部分；translation_only=仅译文。</stentry>
-          <stentry>full</stentry>
+          <stentry>输出模式。完整模式包含五部分；translation_only 仅含英文译文，不附标题或核对表。</stentry>
+          <stentry>完整五部分（完整值见下方）</stentry>
         </strow>
         <strow>
           <stentry>terminology_source</stentry>
@@ -41,7 +41,7 @@
         <strow>
           <stentry>domain</stentry>
           <stentry>内容领域，帮助匹配相关术语和风格规则。</stentry>
-          <stentry>technology_news</stentry>
+          <stentry>technology_news_international_communication</stentry>
         </strow>
         <strow>
           <stentry>headline_options</stentry>
@@ -64,7 +64,7 @@
           <stentry>true</stentry>
         </strow>
       </simpletable>
-      <note>output_mode 的完整值为 full_news_translation_with_quality_report（完整五部分）或 translation_only（仅译文），表格中简写为 full。target_reader 可取 general_international_reader（普通国际读者）、tech_industry_reader（科技产业读者）或 academic_reader（学术读者）。</note>
+      <note>output_mode 为 full_news_translation_with_quality_report（完整五部分）或 translation_only（仅译文）；仅译文模式不输出标题及辅助部分。target_reader 的约定值为 general_international_reader（普通国际读者）、tech_industry_reader（科技产业读者）或 academic_reader（学术读者）。</note>
     </section>
     <section>
       <title>默认设置</title>
@@ -83,12 +83,12 @@
     </section>
     <section>
       <title>输出模式说明（基于 conkeyref 的内容复用）</title>
-      <p>output_mode 有两种取值，对应不同的输出提示。下面通过基于 key 的内容引用（conkeyref）展示两种模式的差异：切换模式时，只需修改 keys.ditamap 中 output-prompt 这个 key 的指向，正文无需改动。</p>
-      <p><b>正式稿件模式（full）：</b></p>
+      <p>下面通过 conkeyref 复用两种模式的文档说明。要改变智能体实际输出，请在对话中提出要求或修改平台提示词；修改 keys.ditamap 只改变文档的引用来源。</p>
+      <p><b>正式稿件模式（full_news_translation_with_quality_report）：</b></p>
       <p conkeyref="output-prompt/output-prompt-full"/>
-      <p><b>快速预览模式（translation_only）：</b></p>
+      <p><b>仅译文模式（translation_only）：</b></p>
       <p conkeyref="output-prompt/output-prompt-brief"/>
-      <note>上两段内容通过 conkeyref 引用自 common-reuse.dita，引用处只写了 key 名（output-prompt），未写死文件路径。若将来把复用源迁移到其他文件，只需在 keys.ditamap 修改 key 的 href 指向，正文引用自动跟随。</note>
+      <note>两段分别引用 output-prompt/output-prompt-full 和 output-prompt/output-prompt-brief。若迁移复用源，可修改 key 的 href；新源需保留被引用的片段 id。</note>
     </section>
   </refbody>
 </reference>
