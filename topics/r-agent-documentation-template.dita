@@ -43,7 +43,7 @@
       <p>仓库中的 <filepath>templates/agent-docs/</filepath> 包含以下可独立复制的文件。保留目录相对位置，替换填写提示后再验证。</p>
       <simpletable>
         <sthead><stentry>文件</stentry><stentry>用途</stentry></sthead>
-        <strow><stentry>maps/agent.ditamap</stentry><stentry>文档入口，按概述、快速开始、格式、问题处理组织阅读。</stentry></strow>
+        <strow><stentry>agent.ditamap</stentry><stentry>根目录的文档入口，按概述、快速开始、格式、问题处理组织阅读。</stentry></strow>
         <strow><stentry>topics/c-overview.dita</stentry><stentry>填写用户、任务、能力、状态和范围。</stentry></strow>
         <strow><stentry>topics/t-quick-start.dita</stentry><stentry>填写前提、动作和可观察结果。</stentry></strow>
         <strow><stentry>topics/r-input-output.dita</stentry><stentry>填写输入要求和输出样例。</stentry></strow>

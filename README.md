@@ -13,7 +13,7 @@
 | 使用“智译国传”完成一次翻译 | [快速开始](topics/t-quick-start.dita) |
 | 学习为自己的智能体写文档 | [从零编写智能体技术文档](topics/t-write-agent-documentation.dita) |
 | 查看各章节写什么、如何证明功能 | [智能体文档结构与填写模板](topics/r-agent-documentation-template.dita) |
-| 直接创建自己的 DITA 文档集 | [最小示例地图](templates/agent-docs/maps/agent.ditamap) |
+| 直接创建自己的 DITA 文档集 | [最小示例地图](templates/agent-docs/agent.ditamap) |
 | 在 Oxygen 中修改并检查文档 | [编辑、验证和发布](topics/t-author-and-validate-in-oxygen.dita) |
 | 把修改同步到 GitHub 和 Pages | [同步与发布步骤](topics/t-sync-github-pages.dita) |
 
@@ -35,7 +35,7 @@ GitHub 上的 `.dita` 文件是 XML 源文件，排版后的阅读版本请从�
 `templates/agent-docs/` 包含四篇带填写提示的主题和一张地图，不依赖本项目的产品变量。
 
 1. 将 `templates/agent-docs/` 整个文件夹复制到自己的新项目目录。
-2. 在 Oxygen 中打开复制后的 `maps/agent.ditamap`，选择在 **DITA Maps Manager** 中管理。
+2. 在 Oxygen 中打开复制后根目录的 `agent.ditamap`，选择在 **DITA Maps Manager** 中管理。
 3. 按 `topics/` 中的 `[填写...]` 提示补充实际内容，更新产品名、版本和示例。
 4. 验证地图并生成 HTML5 或 PDF。
 

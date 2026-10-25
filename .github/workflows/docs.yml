@@ -102,10 +102,11 @@ jobs:
       - name: Build starter template
         run: |
           dita \
-            -i templates/agent-docs/maps/agent.ditamap \
+            -i templates/agent-docs/agent.ditamap \
             -f html5 \
             -o build/starter-template \
             --outer.control=quiet
+          python scripts/prepare_site.py build/starter-template --check
 
       - name: Build HTML5 site
         run: |
